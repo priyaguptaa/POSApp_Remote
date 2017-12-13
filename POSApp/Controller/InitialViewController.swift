@@ -13,14 +13,14 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var buttonSignInSignUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
     @IBAction func actionButtonSignInSignUp(_ sender: Any) {
         
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
-        let baseVC = storyBord.instantiateViewController(withIdentifier: "BaseViewController") as! BaseViewController
+        let baseVC = storyBord.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         navigationController?.pushViewController(baseVC, animated: true)
     }
     override func didReceiveMemoryWarning() {

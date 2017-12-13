@@ -12,9 +12,31 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+ var userDefaultsDictionary  : [String:AnyObject]? = [:]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let userDefaults = UserDefaults.standard
+        self.userDefaultsDictionary = userDefaults.value(forKey: "dataDictionary") as? [String : AnyObject]
+        
+        if(userDefaultsDictionary == nil)
+        {
+            
+            
+            let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
+            let loginVC = storyBord.instantiateViewController(withIdentifier: "RegisterViewController")as! RegisterViewController
+            let navigationController = self.window?.rootViewController as! UINavigationController
+            navigationController.pushViewController(loginVC, animated: false)
+            
+            
+        }
+        else{
+            
+            let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+            let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+             self.window?.rootViewController = navVC
+            
+        }
         // Override point for customization after application launch.
         
         return true

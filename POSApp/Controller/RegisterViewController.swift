@@ -1,35 +1,30 @@
 //
 //  RegisterViewController.swift
-//  POSApp
+//  RestaurantMannegmentDemo1
 //
-//  Created by priya gupta on 06/12/17.
-//  Copyright © 2017 priya gupta. All rights reserved.
+//  Created by priya gupta on 20/11/17.
+//  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
 import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var signUpContainerView: UIView!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var signInContainerView: UIView!
-   
-    
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var signUpContainerView: UIView!
+  
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         //  set segment control font size
         let attribute = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 25.0)!, forKey: NSFontAttributeName as NSCopying)
         segmentControl.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
-
+        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func segmentControlChanged(_ sender: Any) {
+    @IBAction func segmentControlAction(_ sender: Any) {
         
         switch segmentControl.selectedSegmentIndex {
             
@@ -46,6 +41,18 @@ class RegisterViewController: UIViewController {
             
         }
     }
+        
+    override func viewWillAppear(_ animated: Bool) {
+        
+          self.navigationController?.isNavigationBarHidden = true
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -125,6 +125,21 @@ class DBManager: NSObject {
       
     return users
     }
-    
+    func updateUserInfo(firstName: String, lastName: String, email: String) {
+        if openDatabase() {
+            let query = "update POSUSER set \(fieldFirstName)=?, \(fieldLastName)=? where \(fieldEmail)=?"
+            
+            do {
+                
+                try database.executeUpdate(query, values: [firstName, lastName, email])
+                
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+            database.close()
+        }
+    }
 }
 

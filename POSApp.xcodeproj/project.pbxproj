@@ -25,7 +25,6 @@
 		E92676C31FD84C2A0077983F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */; };
 		E92676C41FD84C2A0077983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C21FD84C2A0077983F /* Main.storyboard */; };
 		E92676C71FD84CC60077983F /* POSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676C61FD84CC60077983F /* POSManager.swift */; };
-		E92676C91FD851FD0077983F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676C81FD851FD0077983F /* RegisterViewController.swift */; };
 		E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */; };
 		E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */; };
 		E960275F1FD85C0C0099AA85 /* MenuListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027531FD85C0C0099AA85 /* MenuListTableViewCell.swift */; };
@@ -36,7 +35,7 @@
 		E96027641FD85C0C0099AA85 /* OrderItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96027581FD85C0C0099AA85 /* OrderItemTableViewCell.xib */; };
 		E96027651FD85C0C0099AA85 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027591FD85C0C0099AA85 /* SideMenuTableViewCell.swift */; };
 		E96027661FD85C0C0099AA85 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E960275A1FD85C0C0099AA85 /* SideMenuTableViewCell.xib */; };
-		E96027741FD85CD90099AA85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027671FD85CD90099AA85 /* BaseViewController.swift */; };
+		E96027741FD85CD90099AA85 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027671FD85CD90099AA85 /* RegisterViewController.swift */; };
 		E96027751FD85CD90099AA85 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027681FD85CD90099AA85 /* ConfigurationViewController.swift */; };
 		E96027761FD85CD90099AA85 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027691FD85CD90099AA85 /* CustomerViewController.swift */; };
 		E96027771FD85CD90099AA85 /* EndOfDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960276A1FD85CD90099AA85 /* EndOfDayViewController.swift */; };
@@ -113,7 +112,6 @@
 		E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E92676C21FD84C2A0077983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E92676C61FD84CC60077983F /* POSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSManager.swift; sourceTree = "<group>"; };
-		E92676C81FD851FD0077983F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		E96027531FD85C0C0099AA85 /* MenuListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,7 +122,7 @@
 		E96027581FD85C0C0099AA85 /* OrderItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderItemTableViewCell.xib; sourceTree = "<group>"; };
 		E96027591FD85C0C0099AA85 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		E960275A1FD85C0C0099AA85 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
-		E96027671FD85CD90099AA85 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E96027671FD85CD90099AA85 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E96027681FD85CD90099AA85 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		E96027691FD85CD90099AA85 /* CustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		E960276A1FD85CD90099AA85 /* EndOfDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOfDayViewController.swift; sourceTree = "<group>"; };
@@ -272,7 +270,7 @@
 			children = (
 				E92676BF1FD84BAF0077983F /* PoPUp */,
 				E92676BE1FD84B7E0077983F /* Cells */,
-				E96027671FD85CD90099AA85 /* BaseViewController.swift */,
+				E96027671FD85CD90099AA85 /* RegisterViewController.swift */,
 				E96027681FD85CD90099AA85 /* ConfigurationViewController.swift */,
 				E96027691FD85CD90099AA85 /* CustomerViewController.swift */,
 				0189D1F11FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift */,
@@ -288,7 +286,6 @@
 				E96027721FD85CD90099AA85 /* SignInViewController.swift */,
 				E96027731FD85CD90099AA85 /* SignUpViewController.swift */,
 				E92676B31FD84A5D0077983F /* InitialViewController.swift */,
-				E92676C81FD851FD0077983F /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -724,11 +721,10 @@
 				E96027981FD85EF00099AA85 /* Constant.swift in Sources */,
 				E960279A1FD85EFE0099AA85 /* UIColor.swift in Sources */,
 				E96027611FD85C0C0099AA85 /* OrderCollectionViewCell.swift in Sources */,
-				E92676C91FD851FD0077983F /* RegisterViewController.swift in Sources */,
 				E96027751FD85CD90099AA85 /* ConfigurationViewController.swift in Sources */,
 				E960275F1FD85C0C0099AA85 /* MenuListTableViewCell.swift in Sources */,
 				E96027761FD85CD90099AA85 /* CustomerViewController.swift in Sources */,
-				E96027741FD85CD90099AA85 /* BaseViewController.swift in Sources */,
+				E96027741FD85CD90099AA85 /* RegisterViewController.swift in Sources */,
 				E96027771FD85CD90099AA85 /* EndOfDayViewController.swift in Sources */,
 				E92676B91FD84AA50077983F /* POSUser.swift in Sources */,
 				13D946A61FD948F400E89DD3 /* AddTableCollectionViewCell.swift in Sources */,

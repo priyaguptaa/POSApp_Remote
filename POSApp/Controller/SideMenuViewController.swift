@@ -12,8 +12,9 @@ import SideMenu
 class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableViewSideMenu: UITableView!
-    var menuDictArray : [[String : String]] = [[:]]
     var userDefaultsDictionary  : [String:String] = [:]
+    var menuDictArray : [[String : String]] = [[:]]
+   
     var appDelegate = AppDelegate()
     
     override func viewDidLoad() {
@@ -55,11 +56,9 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         if(indexPath.row == 0){
             
             let userProfileCell = self.tableViewSideMenu.dequeueReusableCell(withIdentifier: "UserProfileTableViewCell", for: indexPath) as! UserProfileTableViewCell
-//            userProfileCell.labelFirstName.text = "priya"
-//            userProfileCell.labelLastName.text = "Gupta"
-//            userProfileCell.labelEmailAddress.text = "priya.gupta@gmail.com"
-            userProfileCell.labelFirstName.text = self.userDefaultsDictionary["firstName"]!
-            userProfileCell.labelLastName.text = self.userDefaultsDictionary["lastName"]!
+
+            userProfileCell.labelFirstName.text = self.userDefaultsDictionary["firstName"]! + " " + self.userDefaultsDictionary["lastName"]!
+        
             userProfileCell.labelEmailAddress.text = self.userDefaultsDictionary["userEmail"]!
             return userProfileCell
             
@@ -124,27 +123,66 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         }
             
         else if(nameFetch == "Logout"){
-
-            let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
-             refreshAlert.view.tintColor = UIColor.red
-      
-            refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
-                self.dismiss(animated: true, completion: {
+            
+             let alertController = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ?", preferredStyle: .alert)
+               let alertControllerNevermind = UIAlertController(title: "Nevermind", message: "Are You Sure to cancel", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+                alert -> Void in
               
-                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseViewController")
+
+                self.dismiss(animated: true, completion: {
+                    
+                    self.userDefaultsDictionary.removeValue(forKey: "dataDictionary")
+                    print("data empty\(String(describing:    self.userDefaultsDictionary.removeValue(forKey: "dataDictionary")))")
+                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
                     let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
+                    UserDefaults.standard.removeObject(forKey: "dataDictionary")
                     navVC.setViewControllers([viewController], animated: false)
                     self.appDelegate.window?.rootViewController = navVC
                     self.dismissModalStack()
                 })
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            alertController.view.tintColor = UIColor.red
+
+            
+           
+            let cancelAction  = UIAlertAction(title:"Cancel", style: .default, handler: {
+                alert -> Void in
+              
+                   alertControllerNevermind.dismiss(animated: true, completion: nil)
                 
-            }))
+            })
+            alertController.addAction(cancelAction)
+          self.present(alertControllerNevermind, animated: true, completion: nil)
+        alertControllerNevermind.view.tintColor = UIColor.brown
             
-            refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
-                refreshAlert .dismiss(animated: true, completion: nil)
-            }))
             
-            present(refreshAlert, animated: true, completion: nil)
+//            let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
+//             refreshAlert.view.tintColor = UIColor.red
+//
+//            refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
+//                self.dismiss(animated: true, completion: {
+//
+//                    self.userDefaultsDictionary.removeValue(forKey: "dataDictionary")
+//                    print("data empty\(   self.userDefaultsDictionary.removeValue(forKey: "dataDictionary"))")
+//                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+//                    let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
+//                    UserDefaults.standard.removeObject(forKey: "dataDictionary")
+//                    navVC.setViewControllers([viewController], animated: false)
+//                    self.appDelegate.window?.rootViewController = navVC
+//                    self.dismissModalStack()
+//                })
+//
+//            }))
+//
+//            refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
+//                refreshAlert .dismiss(animated: true, completion: nil)
+//            }))
+//
+//            present(refreshAlert, animated: true, completion: nil)
         }
         else if(indexPath.row == 0){
             
@@ -152,6 +190,9 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             self.navigationController?.pushViewController(signUpVC, animated: true)
             let scene = SceneType.SideMenuScene
             signUpVC.sceneType = scene
+            signUpVC.firstName = userDefaultsDictionary["firstName"]!
+            signUpVC.lastName = userDefaultsDictionary["lastName"]!
+            signUpVC.email = userDefaultsDictionary["userEmail"]!
         }
     }
     func dismissModalStack() {

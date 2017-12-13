@@ -24,7 +24,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewFirstName: UIView!
     @IBOutlet weak var viewLastName: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    var fetchUpdateValue = ""
+    
+    var firstName = ""
+    var lastName = ""
+    var email = ""
     
     override func viewDidLoad() {
      
@@ -38,10 +41,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.buttonSignUp.titleLabel?.text = "Sign Up"
             break
         case .SideMenuScene?:
-            //self.buttonSignUp.titleLabel?.text = "Update"
-    
+            
             self.buttonSignUp.setTitle("Update", for: .normal)
-            viewPassword.isHidden = true
+                viewPassword.isHidden = true
+            
+                textFieldFirstName.text = firstName
+                textFieldLastName.text = lastName
+                textFieldEmail.text = email
+            textFieldEmail.isUserInteractionEnabled = false
+            
             break
         default : break
         }
@@ -123,7 +131,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         var status : Bool = true
         
-        if value.characters.count < 6 {
+        if value.count < 6 {
             
             status = false
         }
@@ -132,8 +140,28 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signUpButtonAction(_ sender: Any) {
+        switch sceneType {
+        case .InitialScene?:
+            checkFieldsValidation()
+            break
+        case .SideMenuScene?:
+           
+        DBManager.shared.updateUserInfo(firstName: self.textFieldFirstName.text!, lastName: self.textFieldLastName.text!, email: self.textFieldEmail.text!)
+        let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+        print("Data is = \(fetchedUser)")
+        
+        let dataDictionary : [String:String] = ["userEmail" : fetchedUser[0].email, "firstName" : fetchedUser[0].firstName, "lastName" : fetchedUser[0].lastName]
+        UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
+        let result = UserDefaults.standard.value(forKey: "dataDictionary")
+        print("printed  update results user defaults\(result!)")
+          showDefaultAlertViewWith(alertTitle: "data update", alertMessage: "data update succesfully", okTitle: "ok", currentViewController: self)
+        
+            
+            break
+        default : break
+        }
     
-        checkFieldsValidation()
+     //   checkFieldsValidation()
         
     }
     
@@ -148,12 +176,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 alert -> Void in
                 //                let storyB = UIStoryboard.init(name: "Main", bundle: nil)
                 //                let  searchSIVC = storyB.instantiateViewController(withIdentifier: "SignInViewController") as! ViewController
-                //                self.navigationController?.pushViewController(searchSIVC, animated: true)
-                
-                let allVC = self.navigationController?.viewControllers
-                if  let searchSIVC = allVC![allVC!.count - 2] as? BaseViewController {
-                    self.navigationController!.popToViewController(searchSIVC, animated: true)
-                    }
+                //                self.navigationController?.pushViewController(searchSIVC, animated: true)            
             })
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
