@@ -24,19 +24,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantImage" translatesAutoresizingMaskIntoConstraints="NO" id="wip-JX-gWn">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2017, POSApp Inc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-YT-A6K">
+                                <rect key="frame" x="10" y="729" width="1004" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wip-JX-gWn" secondAttribute="trailing" id="64L-Uh-WPa"/>
                             <constraint firstItem="wip-JX-gWn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BO3-78-hX8"/>
                             <constraint firstItem="wip-JX-gWn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="F2N-cc-qh9"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1TN-YT-A6K" secondAttribute="bottom" constant="15" id="OKa-l1-bj3"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wip-JX-gWn" secondAttribute="bottom" id="Oih-wl-6Ms"/>
+                            <constraint firstAttribute="trailing" secondItem="1TN-YT-A6K" secondAttribute="trailing" constant="10" id="VeV-Vb-dQm"/>
+                            <constraint firstItem="1TN-YT-A6K" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="10" id="knU-fJ-gPz"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.734375" y="375"/>
         </scene>
     </scenes>
     <resources>

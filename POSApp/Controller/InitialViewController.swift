@@ -22,7 +22,6 @@ class InitialViewController: UIViewController {
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
         let baseVC = storyBord.instantiateViewController(withIdentifier: "BaseViewController") as! BaseViewController
         navigationController?.pushViewController(baseVC, animated: true)
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

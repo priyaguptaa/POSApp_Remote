@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddFloorCollectionViewCell" id="gTV-IL-0wX" customClass="AddFloorCollectionViewCell" customModule="POSApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-Uz-dnG">
-                        <rect key="frame" x="20" y="24" width="260" height="60"/>
+                        <rect key="frame" x="10" y="11" width="182" height="140"/>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,16 +29,16 @@
             </view>
             <color key="backgroundColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="WmC-Uz-dnG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="PT1-i7-dQO"/>
-                <constraint firstAttribute="trailing" secondItem="WmC-Uz-dnG" secondAttribute="trailing" constant="20" id="rJx-jG-2nY"/>
-                <constraint firstItem="WmC-Uz-dnG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="4" id="stv-pc-Dbj"/>
-                <constraint firstItem="WmC-Uz-dnG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="yEg-PV-92K"/>
+                <constraint firstItem="WmC-Uz-dnG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="PT1-i7-dQO"/>
+                <constraint firstAttribute="trailing" secondItem="WmC-Uz-dnG" secondAttribute="trailing" constant="8" id="rJx-jG-2nY"/>
+                <constraint firstItem="WmC-Uz-dnG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="1" id="stv-pc-Dbj"/>
+                <constraint firstItem="WmC-Uz-dnG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="yEg-PV-92K"/>
             </constraints>
             <size key="customSize" width="248" height="50"/>
             <connections>
                 <outlet property="labelAddFloor" destination="WmC-Uz-dnG" id="6ic-mW-QZf"/>
             </connections>
-            <point key="canvasLocation" x="95.5" y="89.5"/>
+            <point key="canvasLocation" x="95" y="89"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -23,53 +23,31 @@ class OrderItemViewController: UIViewController, UITableViewDelegate, UITableVie
         
     tableViewOrderItem.delegate = self
     tableViewOrderItem.dataSource = self
-    tableViewMenuItem.delegate = self
-    tableViewMenuItem.dataSource = self
+   
         
         
     self.tableViewOrderItem.register(UINib(nibName: "OrderItemTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderItemTableViewCell")
-    self.tableViewMenuItem.register(UINib(nibName: "MenuItemTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuItemTableViewCell")
+    
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        
-        if (tableView == tableViewOrderItem) && tableView == tableViewMenuItem {
-            
-        }
         
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if tableView == tableViewOrderItem {
+       
             return 5
-        }
-        else if (tableView == tableViewMenuItem) {
-            return 6
-        }
-        return 0
+    
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         
-        if(tableView == tableViewOrderItem)
-        {
+       
+        
             let orderItemCell = self.tableViewOrderItem.dequeueReusableCell(withIdentifier: "OrderItemTableViewCell", for: indexPath) as! OrderItemTableViewCell
 
-//            let firstImageCollection = imagesArray[indexPath.row]
-//            firstCollectionCell.firstCollectionImg.image = UIImage(named: firstImageCollection)
             return orderItemCell
-        }
-            
-        else
-        {
-            let menuItemCell = self.tableViewMenuItem.dequeueReusableCell(withIdentifier: "MenuItemTableViewCell", for: indexPath) as! MenuItemTableViewCell
-
-//            let myImage = collectionImageArray[indexPath.row]
-//            collectionCell.collectionImageView.image = UIImage(named: myImage)
-            return menuItemCell
-        }
-    
         
 }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

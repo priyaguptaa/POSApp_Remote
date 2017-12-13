@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+public enum SceneType{
+    case InitialScene
+    case SideMenuScene
+}
+
 func  showDefaultAlertViewWith(alertTitle:String, alertMessage:String, okTitle:String, currentViewController :UIViewController) {
     
     let alert = UIAlertController(title: alertTitle, message:alertMessage, preferredStyle:.alert)

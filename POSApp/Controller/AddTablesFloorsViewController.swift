@@ -17,9 +17,10 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var collectionViewAddTable: UICollectionView!
     @IBOutlet weak var collectionViewAddFloor: UICollectionView!
     var arrayAddFloor : [String] = ["Hall", "Balconey"]
+    var imageArray : [String] = []
     var arrayAddTable : [String] = ["tableWithWheel_img", "4chairTable_img", "candleTable", "CoupleTable_img", "partyTable_img", "tableTree_img", "tableWithWheel_img", "tableYellow_img"]
     var i = 1
-    
+    var indexTable = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -50,7 +51,7 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
         return arrayAddFloor.count
         }
         else {
-        return arrayAddTable.count
+        return imageArray.count
         }
     }
     
@@ -63,7 +64,7 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
         else
         {
             let addTableCollectionCell = collectionViewAddTable.dequeueReusableCell(withReuseIdentifier: "AddTableCollectionViewCell", for: indexPath) as! AddTableCollectionViewCell
-            let collectionImage = arrayAddTable[indexPath.row]
+            let collectionImage = imageArray[indexPath.row]
             addTableCollectionCell.imageViewAddTable.image = UIImage(named: collectionImage)
 
             return addTableCollectionCell
@@ -84,6 +85,7 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     @IBAction func removeFloorButtonAction(_ sender: Any) {
    
         if(arrayAddFloor.count > 2){
+            i = i-1
         arrayAddFloor.removeLast()
         collectionViewAddFloor.reloadData()
         }
@@ -98,9 +100,30 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     
     @IBAction func actionButtonAddTable(_ sender: Any) {
         
+        if (indexTable == 0 || indexTable < arrayAddTable.count - 1) {
+            imageArray.append(arrayAddTable[indexTable])
+            indexTable += 1
+            collectionViewAddTable.reloadData()
+            
     }
-    
+        else {
+            print("error")
+            showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "dont have table", okTitle: "ok", currentViewController: self)
+        }
+    }
     @IBAction func actionButtonRemoveTable(_ sender: Any) {
+        
+        if(imageArray.count > 0){
+            imageArray.removeLast()
+              indexTable = indexTable  - 1
+            collectionViewAddTable.reloadData()
+        }
+        else {
+            
+            print("u r doing wrong")
+            showDefaultAlertViewWith(alertTitle: "Error Msg:(", alertMessage: "all table are remove", okTitle: "ok", currentViewController: self)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

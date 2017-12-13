@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuListTableViewCell" id="KGk-i7-Jjw" customClass="MenuListTableViewCell" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="668" height="90"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuListTableViewCell" id="KGk-i7-Jjw" customClass="MenuListTableViewCell" customModule="POSApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="679" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="668" height="89"/>
+                <rect key="frame" x="0.0" y="0.0" width="679" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4C-5z-KDe" customClass="DesignableView" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="11" width="670" height="64"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4C-5z-KDe" customClass="DesignableView" customModule="POSApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="679" height="90"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-MF-bfI" customClass="DesignableLabel" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="45" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-MF-bfI" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="43" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="keb-2O-WQ2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,9 +35,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Sh-zxG" customClass="DesignableLabel" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-                                <rect key="frame" x="44" y="0.0" width="357" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Sh-zxG" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="41" y="10" width="320" height="70"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,9 +49,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-Zy-Yfu" customClass="DesignableLabel" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-                                <rect key="frame" x="399" y="0.0" width="95" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-Zy-Yfu" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="360" y="10" width="112" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="SGW-qR-chQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,21 +63,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Special" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4r-Mn-ZF5" customClass="DesignableLabel" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-                                <rect key="frame" x="493" y="0.0" width="95" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-xm-zXA" customClass="DesignableLabel" customModule="RestaurantMannegmentDemo1" customModuleProvider="target">
-                                <rect key="frame" x="587" y="0.0" width="80" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-xm-zXA" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="580" y="10" width="99" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="Kdb-KP-qKw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,21 +77,59 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4r-Mn-ZF5" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="471" y="10" width="109" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="oOH-pk-WK8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tOT-Zy-Yfu" secondAttribute="bottom" constant="10" id="0BK-n2-hZc"/>
+                            <constraint firstItem="tOT-Zy-Yfu" firstAttribute="leading" secondItem="O6B-Sh-zxG" secondAttribute="trailing" constant="-1" id="40C-0K-9eN"/>
+                            <constraint firstItem="kjj-xm-zXA" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="5lp-Lb-hGz"/>
+                            <constraint firstItem="R7t-MF-bfI" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="6h8-6k-FtY"/>
+                            <constraint firstAttribute="bottom" secondItem="R7t-MF-bfI" secondAttribute="bottom" constant="10" id="BdX-fi-aXK"/>
+                            <constraint firstAttribute="bottom" secondItem="z4r-Mn-ZF5" secondAttribute="bottom" constant="10" id="EP8-QH-R2T"/>
+                            <constraint firstItem="tOT-Zy-Yfu" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="Eyc-ry-Dm4"/>
+                            <constraint firstAttribute="bottom" secondItem="O6B-Sh-zxG" secondAttribute="bottom" constant="10" id="HVs-bA-sC1"/>
+                            <constraint firstItem="kjj-xm-zXA" firstAttribute="leading" secondItem="z4r-Mn-ZF5" secondAttribute="trailing" id="HlD-fh-BEH"/>
+                            <constraint firstItem="R7t-MF-bfI" firstAttribute="leading" secondItem="Y4C-5z-KDe" secondAttribute="leading" id="OTJ-s0-BGY"/>
+                            <constraint firstAttribute="bottom" secondItem="kjj-xm-zXA" secondAttribute="bottom" constant="10" id="Uss-t2-jbz"/>
+                            <constraint firstItem="z4r-Mn-ZF5" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="WQN-5X-z4k"/>
+                            <constraint firstItem="O6B-Sh-zxG" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="hKc-gj-0Rz"/>
+                            <constraint firstItem="z4r-Mn-ZF5" firstAttribute="leading" secondItem="tOT-Zy-Yfu" secondAttribute="trailing" constant="-1" id="jrU-AQ-6ue"/>
+                            <constraint firstAttribute="trailing" secondItem="kjj-xm-zXA" secondAttribute="trailing" id="oy3-tt-XKo"/>
+                            <constraint firstItem="O6B-Sh-zxG" firstAttribute="leading" secondItem="R7t-MF-bfI" secondAttribute="trailing" constant="-2" id="x7D-WB-1NL"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
+                                <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
-                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Y4C-5z-KDe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SeF-gG-Fc6"/>
+                    <constraint firstItem="Y4C-5z-KDe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Y15-h7-G0d"/>
+                    <constraint firstAttribute="bottom" secondItem="Y4C-5z-KDe" secondAttribute="bottom" id="nUn-OG-p0r"/>
+                    <constraint firstAttribute="trailing" secondItem="Y4C-5z-KDe" secondAttribute="trailing" id="ouN-wu-ie8"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="labelGst" destination="kjj-xm-zXA" id="Z3c-ji-jUb"/>
@@ -108,7 +138,7 @@
                 <outlet property="labelPrice" destination="tOT-Zy-Yfu" id="D1C-ZC-DCT"/>
                 <outlet property="labelSpecial" destination="z4r-Mn-ZF5" id="OJA-M1-gSv"/>
             </connections>
-            <point key="canvasLocation" x="57" y="90"/>
+            <point key="canvasLocation" x="56.5" y="90"/>
         </tableViewCell>
     </objects>
 </document>

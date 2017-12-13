@@ -17,6 +17,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var buttonSignIn: UIButton!
+    var appDelegate = AppDelegate()
+     var dataDictionary : [String:AnyObject] = [:]
     
     override func viewDidLoad() {
         
@@ -27,10 +29,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         textFieldEmail.text = "priya.gupta@gmail.com"
         textFieldPassword.text = "priya123"
+        
         // for keybord show and hide
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -41,6 +46,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         viewEmail.backgroundColor = UIColor.customLightBlue
         viewPassword.backgroundColor = UIColor.customLightBlue
         buttonSignIn.backgroundColor = UIColor.customRed
+        
     }
     
     // set textField place holder
@@ -87,26 +93,26 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        
+     
         // fetching data base values and checking validation
     let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
         print("Data is = \(fetchedUser)")
+        
+        let dataDictionary : [String:String] = ["userEmail" : fetchedUser[0].email, "firstName" : fetchedUser[0].firstName, "lastName" : fetchedUser[0].lastName]
+        UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
+        let result = UserDefaults.standard.value(forKey: "dataDictionary")
+        print("printed results user defaults\(result!)")
         if fetchedUser.count  > 0 {
-            
             if (self.textFieldEmail.text == fetchedUser[0].email) && (self.textFieldPassword.text == fetchedUser[0].password) {
-                
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
-                let  homeVC = storyB.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                homeVC.title = "Home"
-                // adding navigation programatically
                 let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
-                navVC.setViewControllers([homeVC], animated: false)
-                self.navigationController?.present(navVC, animated: false, completion: nil)
-                
+                self.appDelegate.window?.rootViewController = navVC
+            
             }
             
         }
-            
+           
+        
         else if(self.textFieldEmail.text == "") && (self.textFieldPassword.text == "") {
         showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "please Enter Email and Password", okTitle: "ok", currentViewController: self)
         }
@@ -122,18 +128,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
       else{
         showDefaultAlertViewWith(alertTitle: "Error", alertMessage: "Please Enter Email and Password", okTitle: "ok", currentViewController: self)
         }
-        
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
-        
-        
+
+        let forgotVC  = self.storyboard?.instantiateViewController(withIdentifier:  "ForgetVC") as!   ForgotPasswordViewController
+        self.navigationController?.pushViewController(forgotVC, animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

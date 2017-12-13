@@ -12,6 +12,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     var users: [UserInfo]!
     var dataBase : FMDatabase = FMDatabase()
     var dataArray: [AnyObject] = []
+   var sceneType : SceneType? = nil
+    
     @IBOutlet weak var textFieldFirstName: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -22,13 +24,27 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewFirstName: UIView!
     @IBOutlet weak var viewLastName: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    var fetchUpdateValue = ""
     
     override func viewDidLoad() {
-        
+     
         super.viewDidLoad()
         setTextFieldDelegate()
         textFieldPlaceHolder()
         setCustomColor()
+        
+        switch sceneType {
+        case .InitialScene?:
+            self.buttonSignUp.titleLabel?.text = "Sign Up"
+            break
+        case .SideMenuScene?:
+            //self.buttonSignUp.titleLabel?.text = "Update"
+    
+            self.buttonSignUp.setTitle("Update", for: .normal)
+            viewPassword.isHidden = true
+            break
+        default : break
+        }
         
         let dataSharedInstance = DBManager.shared
         dataSharedInstance.fetchTextFieldValue(withFirstName: textFieldFirstName.text!, withLastName: textFieldLastName.text!, withEmail: textFieldEmail.text!, withPassword: textFieldPassword.text!)
@@ -108,17 +124,21 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         var status : Bool = true
         
         if value.characters.count < 6 {
+            
             status = false
         }
+        
         return status
     }
     
     @IBAction func signUpButtonAction(_ sender: Any) {
-        
+    
         checkFieldsValidation()
+        
     }
     
     func checkFieldsValidation(){
+        
         let emailResult = isValidEmail(testStr: textFieldEmail.text!)
         let passwordResult = isValidPincode(value:textFieldPassword.text!)
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){

@@ -17,10 +17,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonEndOfDay: DesignButton!
     @IBOutlet weak var buttonOrders: DesignButton!
     @IBOutlet weak var buttonSideMenu: UIButton!
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+     
         designNavigation()
         setCustomColor()
      //UIApplication.shared.statusBarFrame.backgroundColor = .red
