@@ -30,20 +30,50 @@ class ForgotPasswordViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func isValidEmail(testStr:String) -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+        
+    }
 
     @IBAction func actionButtonSubmit(_ sender: Any) {
+        let emailResult = isValidEmail(testStr: textFieldEmail.text!)
         let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
         print("value is \(fetchedUser)")
         
-        if(textFieldEmail.text == ""){
-            showDefaultAlertViewWith(alertTitle: "Empty Email", alertMessage: "please Enter Email Address", okTitle: "ok", currentViewController: self)
+        if (fetchedUser.count>0) {
+//            showDefaultAlertViewWith(alertTitle: "error", alertMessage: "error", okTitle: "ok", currentViewController: self)
+             if(self.textFieldEmail.text == fetchedUser[0].email){
+//                            showDefaultAlertViewWith(alertTitle: "Empty Email", alertMessage: "please Enter Email Address", okTitle: "ok", currentViewController: self)
+                
+                password = fetchedUser[0].password
+                showDefaultAlertViewWith(alertTitle: "Your Password is", alertMessage: password, okTitle: "ok", currentViewController: self)
+                
+            }
         }
-   
+       
+         else if(textFieldEmail.text == ""){
+            
+            showDefaultAlertViewWith(alertTitle: "Empty Text", alertMessage: "Enter Email address", okTitle: "ok", currentViewController: self)
+        }
+        
+  else if(emailResult == false){
+            showDefaultAlertViewWith(alertTitle: "Wrong Email", alertMessage: "Enter Correct Email", okTitle: "ok", currentViewController: self)
+    }
+
+//             else if(self.textFieldEmail.text == fetchedUser[0].email){
+////            showDefaultAlertViewWith(alertTitle: "Empty Email", alertMessage: "please Enter Email Address", okTitle: "ok", currentViewController: self)
+//
+//            password = fetchedUser[0].password
+//            showDefaultAlertViewWith(alertTitle: "Your Password is", alertMessage: password, okTitle: "ok", currentViewController: self)
+//
+//        }
         else{
-            password = fetchedUser[0].password
-            showDefaultAlertViewWith(alertTitle: "Your Password is", alertMessage: password, okTitle: "ok", currentViewController: self)
+                    showDefaultAlertViewWith(alertTitle: "Wrong Email", alertMessage: "please Enter Correct Email Address", okTitle: "ok", currentViewController: self)
         }
+      
     }
    
     /*

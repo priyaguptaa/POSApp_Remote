@@ -11,6 +11,8 @@ import UIKit
 class CustomerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableViewDropDown: UITableView!
     @IBOutlet weak var textFieldLastName: UITextField!
     @IBOutlet weak var textFieldFirstName: UITextField!
@@ -27,6 +29,8 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         setTextFieldDelegate()
         setCustomColor()
         tableViewDropDown.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -80,6 +84,24 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         textFieldLastName.resignFirstResponder()
         textFieldCustmorContact.resignFirstResponder()
         return true
+        
+    }
+    func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+        
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        scrollView.contentInset = contentInset
         
     }
     

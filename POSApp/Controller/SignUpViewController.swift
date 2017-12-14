@@ -12,8 +12,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     var users: [UserInfo]!
     var dataBase : FMDatabase = FMDatabase()
     var dataArray: [AnyObject] = []
-   var sceneType : SceneType? = nil
-    
+    var sceneType : SceneType? = nil
+    var dataDictionary : [String:AnyObject] = [:]
+    var activeField: UITextField!
+    var appDelegate = AppDelegate()
+    var firstName = ""
+    var lastName = ""
+    var email = ""
     @IBOutlet weak var textFieldFirstName: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -24,10 +29,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewFirstName: UIView!
     @IBOutlet weak var viewLastName: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    var firstName = ""
-    var lastName = ""
-    var email = ""
+  
     
     override func viewDidLoad() {
      
@@ -35,7 +37,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         setTextFieldDelegate()
         textFieldPlaceHolder()
         setCustomColor()
-        
+          self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         switch sceneType {
         case .InitialScene?:
             self.buttonSignUp.titleLabel?.text = "Sign Up"
@@ -56,6 +58,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         let dataSharedInstance = DBManager.shared
         dataSharedInstance.fetchTextFieldValue(withFirstName: textFieldFirstName.text!, withLastName: textFieldLastName.text!, withEmail: textFieldEmail.text!, withPassword: textFieldPassword.text!)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
@@ -102,23 +105,44 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     func keyboardWillShow(notification:NSNotification){
         
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
+//        var userInfo = notification.userInfo!
+//        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+//        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+//
+//        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+//        contentInset.bottom = keyboardFrame.size.height
+//        scrollView.contentInset = contentInset
+        var info = notification.userInfo!
+        let kbSize: CGSize = ((info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size)
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize.height
         
     }
     
     func keyboardWillHide(notification:NSNotification){
         
-        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        scrollView.contentInset = contentInset
+//        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+//        scrollView.contentInset = contentInset
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
+    }
     func isValidEmail(testStr:String) -> Bool {
      
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -140,6 +164,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signUpButtonAction(_ sender: Any) {
+        
         switch sceneType {
         case .InitialScene?:
             checkFieldsValidation()
@@ -154,6 +179,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
         let result = UserDefaults.standard.value(forKey: "dataDictionary")
         print("printed  update results user defaults\(result!)")
+        
           showDefaultAlertViewWith(alertTitle: "data update", alertMessage: "data update succesfully", okTitle: "ok", currentViewController: self)
         
             
@@ -171,12 +197,23 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let passwordResult = isValidPincode(value:textFieldPassword.text!)
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){
                 DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)
+            
                 let alertController = UIAlertController(title: "save", message: "Data Inserted Successfully", preferredStyle: .alert)
+            
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: {
                 alert -> Void in
-                //                let storyB = UIStoryboard.init(name: "Main", bundle: nil)
-                //                let  searchSIVC = storyB.instantiateViewController(withIdentifier: "SignInViewController") as! ViewController
-                //                self.navigationController?.pushViewController(searchSIVC, animated: true)            
+                    
+                    let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+                    let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+                    self.appDelegate.window?.rootViewController = navVC
+                    let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+                    print("Data is = \(fetchedUser)")
+                    
+                    let dataDictionary : [String:String] = ["userEmail" : fetchedUser[0].email, "firstName" : fetchedUser[0].firstName, "lastName" : fetchedUser[0].lastName]
+                    UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
+                    let result = UserDefaults.standard.value(forKey: "dataDictionary")
+                    print("printed results user defaults\(result!)")
+                    
             })
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
@@ -210,16 +247,4 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

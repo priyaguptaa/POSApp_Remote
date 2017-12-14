@@ -127,7 +127,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
              let alertController = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ?", preferredStyle: .alert)
                let alertControllerNevermind = UIAlertController(title: "Nevermind", message: "Are You Sure to cancel", preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+            let okAction = UIAlertAction(title: "Logout ", style: .default, handler: {
                 alert -> Void in
               
 
@@ -145,11 +145,11 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             })
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
-            alertController.view.tintColor = UIColor.red
+            alertController.view.tintColor = UIColor.blue
 
             
            
-            let cancelAction  = UIAlertAction(title:"Cancel", style: .default, handler: {
+            let cancelAction  = UIAlertAction(title:"Nevermind", style: .destructive, handler: {
                 alert -> Void in
               
                    alertControllerNevermind.dismiss(animated: true, completion: nil)
@@ -157,32 +157,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             })
             alertController.addAction(cancelAction)
           self.present(alertControllerNevermind, animated: true, completion: nil)
-        alertControllerNevermind.view.tintColor = UIColor.brown
-            
-            
-//            let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
-//             refreshAlert.view.tintColor = UIColor.red
-//
-//            refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
-//                self.dismiss(animated: true, completion: {
-//
-//                    self.userDefaultsDictionary.removeValue(forKey: "dataDictionary")
-//                    print("data empty\(   self.userDefaultsDictionary.removeValue(forKey: "dataDictionary"))")
-//                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
-//                    let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
-//                    UserDefaults.standard.removeObject(forKey: "dataDictionary")
-//                    navVC.setViewControllers([viewController], animated: false)
-//                    self.appDelegate.window?.rootViewController = navVC
-//                    self.dismissModalStack()
-//                })
-//
-//            }))
-//
-//            refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
-//                refreshAlert .dismiss(animated: true, completion: nil)
-//            }))
-//
-//            present(refreshAlert, animated: true, completion: nil)
+  
         }
         else if(indexPath.row == 0){
             

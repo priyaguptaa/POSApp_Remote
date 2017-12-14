@@ -18,7 +18,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var buttonSignIn: UIButton!
     var appDelegate = AppDelegate()
-     var dataDictionary : [String:AnyObject] = [:]
+    var dataDictionary : [String:AnyObject] = [:]
     
     override func viewDidLoad() {
         
@@ -82,9 +82,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height
         scrollView.contentInset = contentInset
-        
     }
-    
     func keyboardWillHide(notification:NSNotification){
         
         let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -95,23 +93,23 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signInAction(_ sender: Any) {
      
         // fetching data base values and checking validation
-    let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+        let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
         print("Data is = \(fetchedUser)")
         
-        let dataDictionary : [String:String] = ["userEmail" : fetchedUser[0].email, "firstName" : fetchedUser[0].firstName, "lastName" : fetchedUser[0].lastName]
-        UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
-        let result = UserDefaults.standard.value(forKey: "dataDictionary")
-        print("printed results user defaults\(result!)")
+       
+        
         if fetchedUser.count  > 0 {
+            
+            let dataDictionary : [String:String] = ["userEmail" : fetchedUser[0].email, "firstName" : fetchedUser[0].firstName, "lastName" : fetchedUser[0].lastName]
+            UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
+            let result = UserDefaults.standard.value(forKey: "dataDictionary")
+            print("printed results user defaults\(result!)")
             if (self.textFieldEmail.text == fetchedUser[0].email) && (self.textFieldPassword.text == fetchedUser[0].password) {
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
                 let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
                 self.appDelegate.window?.rootViewController = navVC
-            
             }
-            
         }
-           
         
         else if(self.textFieldEmail.text == "") && (self.textFieldPassword.text == "") {
         showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "please Enter Email and Password", okTitle: "ok", currentViewController: self)

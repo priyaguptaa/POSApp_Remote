@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0189D1F21FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F11FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift */; };
+		0189D1F61FE2968100DC5AAF /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */; };
+		0189D1F91FE29FE400DC5AAF /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */; };
+		0189D1FA1FE29FE400DC5AAF /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0189D1F81FE29FE400DC5AAF /* EmployeeTableViewCell.xib */; };
 		1366E6771FDA8710000419D8 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366E6751FDA8710000419D8 /* UserProfileTableViewCell.swift */; };
 		1366E6781FDA8710000419D8 /* UserProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1366E6761FDA8710000419D8 /* UserProfileTableViewCell.xib */; };
 		13D9469E1FD9488900E89DD3 /* AddTablesFloorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9469D1FD9488800E89DD3 /* AddTablesFloorsViewController.swift */; };
@@ -81,6 +84,9 @@
 
 /* Begin PBXFileReference section */
 		0189D1F11FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
+		0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		0189D1F81FE29FE400DC5AAF /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		1366E6751FDA8710000419D8 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		1366E6761FDA8710000419D8 /* UserProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileTableViewCell.xib; sourceTree = "<group>"; };
 		13D9469D1FD9488800E89DD3 /* AddTablesFloorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTablesFloorsViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 				E960276C1FD85CD90099AA85 /* ManagementViewController.swift */,
 				E960276D1FD85CD90099AA85 /* MenuListViewController.swift */,
 				E960276E1FD85CD90099AA85 /* OrderItemViewController.swift */,
+				0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */,
 				E960276F1FD85CD90099AA85 /* OrdersViewController.swift */,
 				E96027701FD85CD90099AA85 /* PopUpViewController.swift */,
 				E96027711FD85CD90099AA85 /* SideMenuViewController.swift */,
@@ -347,6 +354,8 @@
 				E96027551FD85C0C0099AA85 /* OrderCollectionViewCell.swift */,
 				E96027561FD85C0C0099AA85 /* OrderCollectionViewCell.xib */,
 				E96027571FD85C0C0099AA85 /* OrderItemTableViewCell.swift */,
+				0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */,
+				0189D1F81FE29FE400DC5AAF /* EmployeeTableViewCell.xib */,
 				E96027581FD85C0C0099AA85 /* OrderItemTableViewCell.xib */,
 				E96027591FD85C0C0099AA85 /* SideMenuTableViewCell.swift */,
 				E960275A1FD85C0C0099AA85 /* SideMenuTableViewCell.xib */,
@@ -532,6 +541,7 @@
 				E926765E1FD83E4C0077983F /* Assets.xcassets in Resources */,
 				E96027661FD85C0C0099AA85 /* SideMenuTableViewCell.xib in Resources */,
 				13D946A41FD948E700E89DD3 /* AddTableCollectionViewCell.xib in Resources */,
+				0189D1FA1FE29FE400DC5AAF /* EmployeeTableViewCell.xib in Resources */,
 				E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */,
 				13D946A01FD948B100E89DD3 /* AddFloorCollectionViewCell.xib in Resources */,
 			);
@@ -711,6 +721,7 @@
 				E96027791FD85CD90099AA85 /* ManagementViewController.swift in Sources */,
 				E92676C71FD84CC60077983F /* POSManager.swift in Sources */,
 				E96027631FD85C0C0099AA85 /* OrderItemTableViewCell.swift in Sources */,
+				0189D1F91FE29FE400DC5AAF /* EmployeeTableViewCell.swift in Sources */,
 				E960277A1FD85CD90099AA85 /* MenuListViewController.swift in Sources */,
 				E96027941FD85DCB0099AA85 /* CustomUIDesign.swift in Sources */,
 				13D946A21FD948D200E89DD3 /* AddFloorCollectionViewCell.swift in Sources */,
@@ -740,6 +751,7 @@
 				E960277B1FD85CD90099AA85 /* OrderItemViewController.swift in Sources */,
 				E960278F1FD85D7F0099AA85 /* FMDatabaseAdditions.m in Sources */,
 				E92676B51FD84A5D0077983F /* InitialViewController.swift in Sources */,
+				0189D1F61FE2968100DC5AAF /* EmployeeViewController.swift in Sources */,
 				E96027651FD85C0C0099AA85 /* SideMenuTableViewCell.swift in Sources */,
 				E96027961FD85EE00099AA85 /* DBManneger.swift in Sources */,
 				E960277F1FD85CD90099AA85 /* SignInViewController.swift in Sources */,
