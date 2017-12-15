@@ -166,6 +166,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpButtonAction(_ sender: Any) {
         
         switch sceneType {
+            
         case .InitialScene?:
             checkFieldsValidation()
             break

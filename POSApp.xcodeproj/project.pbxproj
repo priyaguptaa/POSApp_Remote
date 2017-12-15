@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012CBF7B1FE3C71900BD1C1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CBF7A1FE3C71900BD1C1C /* Reachability.swift */; };
+		012CBF7C1FE3DECD00BD1C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012CBF7E1FE3DECD00BD1C1C /* Main.storyboard */; };
+		012CBF831FE3F87A00BD1C1C /* LocalizationList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 012CBF851FE3F87A00BD1C1C /* LocalizationList.plist */; };
+		012CBF881FE3F90700BD1C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012CBF8A1FE3F90700BD1C1C /* LaunchScreen.storyboard */; };
+		012CBF901FE3F95B00BD1C1C /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CBF8F1FE3F95B00BD1C1C /* Localizator.swift */; };
 		0189D1F21FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F11FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift */; };
 		0189D1F61FE2968100DC5AAF /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */; };
 		0189D1F91FE29FE400DC5AAF /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */; };
@@ -25,8 +30,6 @@
 		E92676771FD83E4D0077983F /* POSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676761FD83E4D0077983F /* POSAppUITests.swift */; };
 		E92676B51FD84A5D0077983F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676B31FD84A5D0077983F /* InitialViewController.swift */; };
 		E92676B91FD84AA50077983F /* POSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676B81FD84AA50077983F /* POSUser.swift */; };
-		E92676C31FD84C2A0077983F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */; };
-		E92676C41FD84C2A0077983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C21FD84C2A0077983F /* Main.storyboard */; };
 		E92676C71FD84CC60077983F /* POSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676C61FD84CC60077983F /* POSManager.swift */; };
 		E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */; };
 		E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */; };
@@ -83,6 +86,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012CBF7A1FE3C71900BD1C1C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		012CBF7D1FE3DECD00BD1C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		012CBF7F1FE3DEE900BD1C1C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		012CBF801FE3DF0F00BD1C1C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		012CBF841FE3F87A00BD1C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/LocalizationList.plist; sourceTree = "<group>"; };
+		012CBF861FE3F89D00BD1C1C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ar; path = ar.lproj/LocalizationList.plist; sourceTree = "<group>"; };
+		012CBF871FE3F89E00BD1C1C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "hi-IN"; path = "hi-IN.lproj/LocalizationList.plist"; sourceTree = "<group>"; };
+		012CBF891FE3F90700BD1C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		012CBF8C1FE3F90C00BD1C1C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		012CBF8E1FE3F90E00BD1C1C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		012CBF8F1FE3F95B00BD1C1C /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		0189D1F11FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,8 +129,6 @@
 		E92676781FD83E4D0077983F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E92676B31FD84A5D0077983F /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		E92676B81FD84AA50077983F /* POSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSUser.swift; sourceTree = "<group>"; };
-		E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E92676C21FD84C2A0077983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E92676C61FD84CC60077983F /* POSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSManager.swift; sourceTree = "<group>"; };
 		E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -316,8 +328,10 @@
 		E92676BB1FD84B2A0077983F /* Comman */ = {
 			isa = PBXGroup;
 			children = (
-				E96027971FD85EF00099AA85 /* Constant.swift */,
 				E96027951FD85EE00099AA85 /* DBManneger.swift */,
+				012CBF7A1FE3C71900BD1C1C /* Reachability.swift */,
+				E96027971FD85EF00099AA85 /* Constant.swift */,
+				012CBF851FE3F87A00BD1C1C /* LocalizationList.plist */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -327,6 +341,7 @@
 			children = (
 				E96027931FD85DCB0099AA85 /* CustomUIDesign.swift */,
 				E96027991FD85EFE0099AA85 /* UIColor.swift */,
+				012CBF8F1FE3F95B00BD1C1C /* Localizator.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -374,8 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				E92676C51FD84C760077983F /* Xib */,
-				E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */,
-				E92676C21FD84C2A0077983F /* Main.storyboard */,
+				012CBF8A1FE3F90700BD1C1C /* LaunchScreen.storyboard */,
+				012CBF7E1FE3DECD00BD1C1C /* Main.storyboard */,
 			);
 			name = View;
 			path = Base.lproj/View;
@@ -514,6 +529,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				"hi-IN",
 			);
 			mainGroup = E926764A1FD83E4C0077983F;
 			productRefGroup = E92676541FD83E4C0077983F /* Products */;
@@ -536,12 +553,13 @@
 				E96027621FD85C0C0099AA85 /* OrderCollectionViewCell.xib in Resources */,
 				E96027641FD85C0C0099AA85 /* OrderItemTableViewCell.xib in Resources */,
 				E96027601FD85C0C0099AA85 /* MenuListTableViewCell.xib in Resources */,
-				E92676C41FD84C2A0077983F /* Main.storyboard in Resources */,
-				E92676C31FD84C2A0077983F /* LaunchScreen.storyboard in Resources */,
+				012CBF7C1FE3DECD00BD1C1C /* Main.storyboard in Resources */,
+				012CBF881FE3F90700BD1C1C /* LaunchScreen.storyboard in Resources */,
 				E926765E1FD83E4C0077983F /* Assets.xcassets in Resources */,
 				E96027661FD85C0C0099AA85 /* SideMenuTableViewCell.xib in Resources */,
 				13D946A41FD948E700E89DD3 /* AddTableCollectionViewCell.xib in Resources */,
 				0189D1FA1FE29FE400DC5AAF /* EmployeeTableViewCell.xib in Resources */,
+				012CBF831FE3F87A00BD1C1C /* LocalizationList.plist in Resources */,
 				E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */,
 				13D946A01FD948B100E89DD3 /* AddFloorCollectionViewCell.xib in Resources */,
 			);
@@ -742,6 +760,7 @@
 				E96027901FD85D7F0099AA85 /* FMDatabasePool.m in Sources */,
 				E960278E1FD85D7F0099AA85 /* FMDatabase.m in Sources */,
 				E92676571FD83E4C0077983F /* AppDelegate.swift in Sources */,
+				012CBF901FE3F95B00BD1C1C /* Localizator.swift in Sources */,
 				E96027781FD85CD90099AA85 /* HomeViewController.swift in Sources */,
 				E96027911FD85D7F0099AA85 /* FMDatabaseQueue.m in Sources */,
 				E96027921FD85D7F0099AA85 /* FMResultSet.m in Sources */,
@@ -756,6 +775,7 @@
 				E96027961FD85EE00099AA85 /* DBManneger.swift in Sources */,
 				E960277F1FD85CD90099AA85 /* SignInViewController.swift in Sources */,
 				E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */,
+				012CBF7B1FE3C71900BD1C1C /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,11 +810,45 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		012CBF7E1FE3DECD00BD1C1C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012CBF7D1FE3DECD00BD1C1C /* Base */,
+				012CBF7F1FE3DEE900BD1C1C /* ar */,
+				012CBF801FE3DF0F00BD1C1C /* hi-IN */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		012CBF851FE3F87A00BD1C1C /* LocalizationList.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012CBF841FE3F87A00BD1C1C /* Base */,
+				012CBF861FE3F89D00BD1C1C /* ar */,
+				012CBF871FE3F89E00BD1C1C /* hi-IN */,
+			);
+			name = LocalizationList.plist;
+			sourceTree = "<group>";
+		};
+		012CBF8A1FE3F90700BD1C1C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012CBF891FE3F90700BD1C1C /* Base */,
+				012CBF8C1FE3F90C00BD1C1C /* ar */,
+				012CBF8E1FE3F90E00BD1C1C /* hi-IN */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		E92676791FD83E4D0077983F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -846,6 +900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -891,6 +946,7 @@
 			baseConfigurationReference = 519838D646A3ED8AB7B5B56F /* Pods-POSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = POSApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -909,6 +965,7 @@
 			baseConfigurationReference = 2DFF51E18217DAC905DA866F /* Pods-POSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = POSApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;

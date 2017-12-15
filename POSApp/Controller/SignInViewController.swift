@@ -19,6 +19,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonSignIn: UIButton!
     var appDelegate = AppDelegate()
     var dataDictionary : [String:AnyObject] = [:]
+    let reachability = Reachability()!
+    var activeField: UITextField!
     
     override func viewDidLoad() {
         
@@ -26,6 +28,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         setCustomColor()
         setTextFieldDelegate()
         textFieldPlaceHolder()
+      //  checkingNetworkReachability()
         
         textFieldEmail.text = "priya.gupta@gmail.com"
         textFieldPassword.text = "priya123"
@@ -75,21 +78,63 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     func keyboardWillShow(notification:NSNotification){
         
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
+        var info = notification.userInfo!
+        let kbSize: CGSize = ((info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size)
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize.height
     }
     func keyboardWillHide(notification:NSNotification){
         
-        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        scrollView.contentInset = contentInset
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
         
     }
     
+    func checkingNetworkReachability(){
+        
+        reachability.whenReachable = { _ in
+            DispatchQueue.main.async {
+                self.view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            DispatchQueue.main.async {
+                self.view.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.2509803922, blue: 0.2509803922, alpha: 1)
+            }
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
+        do{
+            try reachability.startNotifier()
+        }
+        catch{
+            print("could not start notifire")
+        }
+    }
+    
+    func internetChanged(note: Notification){
+        let reachability = note.object as! Reachability
+        if reachability.connection != .none{
+            if reachability.connection == .wifi{
+                DispatchQueue.main.async {
+                    self.view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    self.view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                }
+            }
+        }
+        else{
+            DispatchQueue.main.async {
+                self.view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            }
+        }
+    }
     @IBAction func signInAction(_ sender: Any) {
      
         // fetching data base values and checking validation
@@ -112,7 +157,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
         
         else if(self.textFieldEmail.text == "") && (self.textFieldPassword.text == "") {
-        showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "please Enter Email and Password", okTitle: "ok", currentViewController: self)
+        showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "Please Enter Email and Password", okTitle: "ok", currentViewController: self)
         }
             
         else if(self.textFieldEmail.text == "") {

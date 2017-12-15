@@ -52,9 +52,12 @@ class RegisterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "SignUpIdentifier"{
+            
          let vc = segue.destination as! SignUpViewController
             vc.sceneType = SceneType.InitialScene
+            
         }
     }
 }

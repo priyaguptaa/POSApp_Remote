@@ -16,6 +16,21 @@ class ManagementViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func actionButtonShift(_ sender: Any) {
+    }
+    @IBAction func actionButtonTimeStamp(_ sender: Any) {
+    }
+    
+    @IBAction func buttonActionEmployee(_ sender: Any) {
+        
+        let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
+        let employeeVC = storyBord.instantiateViewController(withIdentifier: "EmployeeViewController") as! EmployeeViewController
+        self.navigationController?.pushViewController(employeeVC, animated: true)
+        
+    }
+    
+    @IBAction func actionButonCashInOut(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

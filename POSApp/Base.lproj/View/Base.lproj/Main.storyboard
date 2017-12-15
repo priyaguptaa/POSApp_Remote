@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="60" id="ElG-od-i5a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Already A Member?">
+                                <state key="normal" title="Already a Member?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -759,7 +759,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLm-1x-jXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2444" y="-828"/>
+            <point key="canvasLocation" x="2466" y="-515"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="TMp-6j-0E5">
@@ -1182,6 +1182,7 @@
                     <size key="freeformSize" width="1024" height="700"/>
                     <connections>
                         <outlet property="buttonRoll" destination="VMY-RH-Aip" id="EDJ-Xh-Gx2"/>
+                        <outlet property="labelFirstName" destination="4p6-tj-U5O" id="ffr-vb-gBb"/>
                         <outlet property="scrollView" destination="eik-g4-aIV" id="Pdi-kF-mBE"/>
                         <outlet property="tableViewDropDown" destination="KUU-cO-uOq" id="zgf-at-ZhP"/>
                         <outlet property="textFieldCustmorContact" destination="INC-dt-o8A" id="2yf-WE-Uxg"/>
@@ -1212,7 +1213,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjT-aD-coj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-605" y="-855"/>
+            <point key="canvasLocation" x="-540" y="-855"/>
         </scene>
         <!--End Of Day View Controller-->
         <scene sceneID="bbh-Ed-jKe">
@@ -1700,6 +1701,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionButtonShift:" destination="ecV-V8-CfU" eventType="touchUpInside" id="jSh-gi-MXL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ID2-Pb-vPu" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="241" y="0.0" width="231" height="120"/>
@@ -1719,6 +1723,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionButtonTimeStamp:" destination="ecV-V8-CfU" eventType="touchUpInside" id="pVT-wv-tIG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZP-Xz-EtV" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="482" y="0.0" width="231" height="120"/>
@@ -1738,6 +1745,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonActionEmployee:" destination="ecV-V8-CfU" eventType="touchUpInside" id="9bd-9V-T29"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-Tq-YGT" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="723" y="0.0" width="231" height="120"/>
@@ -1757,6 +1767,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionButonCashInOut:" destination="ecV-V8-CfU" eventType="touchUpInside" id="NKU-hc-q7x"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1793,77 +1806,188 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3k-Xi-0zk">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="121"/>
+                                        <rect key="frame" x="0.0" y="30" width="1024" height="121"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YyD-vj-dsQ">
-                                                <rect key="frame" x="0.0" y="31" width="1024" height="70"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-zN-9g7">
+                                                <rect key="frame" x="0.0" y="25.5" width="1024" height="70"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n55-xu-o1c">
-                                                        <rect key="frame" x="0.0" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n55-xu-o1c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHI-uG-Qzk">
-                                                        <rect key="frame" x="147" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHI-uG-Qzk">
+                                                        <rect key="frame" x="146.5" y="0.0" width="146" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-hO-6zS">
-                                                        <rect key="frame" x="294" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-hO-6zS">
+                                                        <rect key="frame" x="292.5" y="0.0" width="146.5" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqj-SY-MRd">
-                                                        <rect key="frame" x="441" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqj-SY-MRd">
+                                                        <rect key="frame" x="439" y="0.0" width="146" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiA-Yp-WWX">
-                                                        <rect key="frame" x="588" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiA-Yp-WWX">
+                                                        <rect key="frame" x="585" y="0.0" width="146.5" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGP-nF-UMV">
-                                                        <rect key="frame" x="735" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUO-Lx-HOa">
+                                                        <rect key="frame" x="731.5" y="0.0" width="146" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dG-QN-7nm">
-                                                        <rect key="frame" x="882" y="0.0" width="142" height="70"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hourly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dG-QN-7nm">
+                                                        <rect key="frame" x="877.5" y="0.0" width="146.5" height="70"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="UbP-5O-Zsa"/>
+                                                    <constraint firstAttribute="height" constant="70" id="JWE-Lw-IRc"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.5450980392" blue="0.61176470589999998" alpha="0.75215682520000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="YyD-vj-dsQ" firstAttribute="leading" secondItem="m3k-Xi-0zk" secondAttribute="leading" id="7ej-ll-tof"/>
-                                            <constraint firstAttribute="trailing" secondItem="YyD-vj-dsQ" secondAttribute="trailing" id="MbJ-Ms-1Hv"/>
-                                            <constraint firstItem="YyD-vj-dsQ" firstAttribute="centerY" secondItem="m3k-Xi-0zk" secondAttribute="centerY" constant="5.5" id="Rgj-cZ-LgK"/>
+                                            <constraint firstItem="NAR-zN-9g7" firstAttribute="centerY" secondItem="m3k-Xi-0zk" secondAttribute="centerY" id="Psp-Vq-Aei"/>
                                             <constraint firstAttribute="height" constant="121" id="XZl-bu-LLW"/>
+                                            <constraint firstAttribute="trailing" secondItem="NAR-zN-9g7" secondAttribute="trailing" id="pNR-hA-wWt"/>
+                                            <constraint firstItem="NAR-zN-9g7" firstAttribute="leading" secondItem="m3k-Xi-0zk" secondAttribute="leading" id="pe4-pN-KRm"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o14-hM-wJq">
-                                        <rect key="frame" x="0.0" y="597" width="1024" height="171"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="0.0" y="647" width="1024" height="121"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HST-nz-gv0">
+                                                <rect key="frame" x="0.0" y="25.5" width="1024" height="70"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmu-vz-4Iy" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="70"/>
+                                                        <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="Add New Employee">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lI3-CB-n6f" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                        <rect key="frame" x="207" y="0.0" width="196.5" height="70"/>
+                                                        <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="Add">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vz3-vs-cxO" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                        <rect key="frame" x="413.5" y="0.0" width="197" height="70"/>
+                                                        <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="Edit">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM9-s9-wiZ" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                        <rect key="frame" x="620.5" y="0.0" width="196.5" height="70"/>
+                                                        <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="Delete">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heb-eB-Za3" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                        <rect key="frame" x="827" y="0.0" width="197" height="70"/>
+                                                        <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="Close">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="jnK-Sd-hsS"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.5450980392" blue="0.61176470589999998" alpha="0.75215682520000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="171" id="CHa-V3-6cU"/>
+                                            <constraint firstAttribute="trailing" secondItem="HST-nz-gv0" secondAttribute="trailing" id="9oV-03-YFh"/>
+                                            <constraint firstAttribute="height" constant="121" id="CHa-V3-6cU"/>
+                                            <constraint firstItem="HST-nz-gv0" firstAttribute="leading" secondItem="o14-hM-wJq" secondAttribute="leading" id="lW2-Na-w07"/>
+                                            <constraint firstItem="HST-nz-gv0" firstAttribute="centerY" secondItem="o14-hM-wJq" secondAttribute="centerY" id="qMf-ht-cIL"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-nq-mjH">
-                                        <rect key="frame" x="0.0" y="121" width="1024" height="480"/>
+                                        <rect key="frame" x="0.0" y="154" width="1024" height="497"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="497" id="391-fd-3Qj"/>
+                                        </constraints>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1871,14 +1995,14 @@
                                     <constraint firstItem="o14-hM-wJq" firstAttribute="top" secondItem="HyR-nq-mjH" secondAttribute="bottom" constant="-4" id="12S-kS-1Xi"/>
                                     <constraint firstItem="HyR-nq-mjH" firstAttribute="width" secondItem="m3k-Xi-0zk" secondAttribute="width" id="DwU-GS-46b"/>
                                     <constraint firstAttribute="trailing" secondItem="m3k-Xi-0zk" secondAttribute="trailing" id="Fmk-bC-xcp"/>
-                                    <constraint firstItem="HyR-nq-mjH" firstAttribute="top" secondItem="m3k-Xi-0zk" secondAttribute="bottom" id="OI9-n9-IeI"/>
+                                    <constraint firstItem="HyR-nq-mjH" firstAttribute="top" secondItem="m3k-Xi-0zk" secondAttribute="bottom" constant="3" id="OI9-n9-IeI"/>
                                     <constraint firstItem="HyR-nq-mjH" firstAttribute="trailing" secondItem="m3k-Xi-0zk" secondAttribute="trailing" id="QIg-TE-a9R"/>
                                     <constraint firstItem="o14-hM-wJq" firstAttribute="leading" secondItem="HyR-nq-mjH" secondAttribute="leading" id="ZpQ-ku-t4x"/>
                                     <constraint firstItem="HyR-nq-mjH" firstAttribute="leading" secondItem="m3k-Xi-0zk" secondAttribute="leading" id="dVt-7t-fer"/>
                                     <constraint firstAttribute="bottom" secondItem="o14-hM-wJq" secondAttribute="bottom" id="fcH-uA-OW7"/>
                                     <constraint firstItem="m3k-Xi-0zk" firstAttribute="leading" secondItem="YRa-Lr-8gb" secondAttribute="leading" id="gh3-lV-aMx"/>
                                     <constraint firstItem="o14-hM-wJq" firstAttribute="trailing" secondItem="HyR-nq-mjH" secondAttribute="trailing" id="gjY-rW-SJ7"/>
-                                    <constraint firstItem="m3k-Xi-0zk" firstAttribute="top" secondItem="YRa-Lr-8gb" secondAttribute="top" id="pl7-lx-YlG"/>
+                                    <constraint firstItem="m3k-Xi-0zk" firstAttribute="top" secondItem="YRa-Lr-8gb" secondAttribute="top" constant="30" id="pl7-lx-YlG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2326,7 +2450,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLp-tK-iyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Home" id="Sda-O9-vvf"/>
             </objects>
-            <point key="canvasLocation" x="1712" y="-809"/>
+            <point key="canvasLocation" x="1689" y="-541"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="EcO-WE-Wyx">
@@ -2398,7 +2522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMi-SH-Szc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="-808"/>
+            <point key="canvasLocation" x="922" y="-541"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="CQs-wL-LHB">

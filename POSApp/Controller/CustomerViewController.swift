@@ -12,6 +12,7 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     
     var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
     
+    @IBOutlet weak var labelFirstName: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableViewDropDown: UITableView!
     @IBOutlet weak var textFieldLastName: UITextField!
@@ -28,6 +29,7 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         
         setTextFieldDelegate()
         setCustomColor()
+          labelFirstName.text = Localizator.instance.localize(string: "key_username")
         tableViewDropDown.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
