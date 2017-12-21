@@ -30,5 +30,6 @@ final class POSManger{
     static let shared = POSManger()
     
     // MARK: Variables
+ var localizeString = ""
 
 }

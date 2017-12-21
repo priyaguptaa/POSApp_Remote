@@ -2,6 +2,441 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_buttonAlreadyMember</key>
+	<dict>
+		<key>value</key>
+		<string>عضوا فعلا</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_forgotPassword</key>
+	<dict>
+		<key>value</key>
+		<string>هل نسيت كلمة المرور</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonSubmit</key>
+	<dict>
+		<key>value</key>
+		<string>خضع</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_selectRoll</key>
+	<dict>
+		<key>value</key>
+		<string>حدد لفة
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterContact</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل رقم الاتصال</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_lastNameLabel</key>
+	<dict>
+		<key>value</key>
+		<string>الكنية
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_firstNameLabel</key>
+	<dict>
+		<key>value</key>
+		<string>الاسم الاول
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_roll</key>
+	<dict>
+		<key>value</key>
+		<string>تدحرج</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_contactNo</key>
+	<dict>
+		<key>value</key>
+		<string>رقم الاتصال</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_category</key>
+	<dict>
+		<key>value</key>
+		<string>الفئة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_menu</key>
+	<dict>
+		<key>value</key>
+		<string>قائمة طعام</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_menuItems</key>
+	<dict>
+		<key>value</key>
+		<string>عناصر القائمة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_no</key>
+	<dict>
+		<key>value</key>
+		<string>رقم</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_name</key>
+	<dict>
+		<key>value</key>
+		<string>اسم</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_price</key>
+	<dict>
+		<key>value</key>
+		<string>السعر</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_special</key>
+	<dict>
+		<key>value</key>
+		<string>خاص</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_gst</key>
+	<dict>
+		<key>value</key>
+		<string>ضريبة السلع والخدمات
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonTable</key>
+	<dict>
+		<key>value</key>
+		<string>الطاولة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonMenu</key>
+	<dict>
+		<key>value</key>
+		<string>قائمة طعام</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonPrint</key>
+	<dict>
+		<key>value</key>
+		<string>طباعة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonClose</key>
+	<dict>
+		<key>value</key>
+		<string>إلغاء</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonSave</key>
+	<dict>
+		<key>value</key>
+		<string>حفظ</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dateWithTime</key>
+	<dict>
+		<key>value</key>
+		<string>تاريخ مع مرور الوقت
+</string>
+		<key>commenrt</key>
+		<string></string>
+	</dict>
+	<key>key_contactPeople</key>
+	<dict>
+		<key>value</key>
+		<string>اتصل بالأشخاص</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterYourName</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل أسمك
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonCashInOut</key>
+	<dict>
+		<key>value</key>
+		<string>كاشين / خارج</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>موظف</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonTimeStamp</key>
+	<dict>
+		<key>value</key>
+		<string>الطابع الزمني</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonShift</key>
+	<dict>
+		<key>value</key>
+		<string>تحول</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEodReport</key>
+	<dict>
+		<key>value</key>
+		<string>تقرير يود</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonReserveEod</key>
+	<dict>
+		<key>value</key>
+		<string>احتياطي اليود</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEod</key>
+	<dict>
+		<key>value</key>
+		<string>التخلص من الذخائر المتفجرة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonReservation</key>
+	<dict>
+		<key>value</key>
+		<string>حجز</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOutCancel</key>
+	<dict>
+		<key>value</key>
+		<string>هل أنت متأكد من إلغاء</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOutTittleNevermind</key>
+	<dict>
+		<key>value</key>
+		<string>لا يهم</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOutMessage</key>
+	<dict>
+		<key>value</key>
+		<string>هل أنت متأكد من تسجيل الخروج؟</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOut</key>
+	<dict>
+		<key>value</key>
+		<string>الخروج</string>
+		<key>comments</key>
+		<string></string>
+	</dict>
+	<key>key_tittleBack</key>
+	<dict>
+		<key>value</key>
+		<string>الى الخلف</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_tittleHome</key>
+	<dict>
+		<key>value</key>
+		<string>الصفحة الرئيسية</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonCustomer</key>
+	<dict>
+		<key>value</key>
+		<string>زبون</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonConfiguration</key>
+	<dict>
+		<key>value</key>
+		<string>ترتيب</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonOrders</key>
+	<dict>
+		<key>value</key>
+		<string>أوامر</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEndOfDay</key>
+	<dict>
+		<key>value</key>
+		<string>نهاية يوم</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonManagement</key>
+	<dict>
+		<key>value</key>
+		<string>إدارة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_saveMessage</key>
+	<dict>
+		<key>value</key>
+		<string>تم إدراج البيانات بنجاح</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_saveTittle</key>
+	<dict>
+		<key>value</key>
+		<string>حفظ</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dataUpdateMessage</key>
+	<dict>
+		<key>value</key>
+		<string>تحديث البيانات بنجاح</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dataUpdateTittle</key>
+	<dict>
+		<key>value</key>
+		<string>تم تحديث البيانات
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_correctEmailOrPassword</key>
+	<dict>
+		<key>value</key>
+		<string>يرجى إدخال البريد الإلكتروني أو كلمة المرور الصحيحة
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_ok</key>
+	<dict>
+		<key>value</key>
+		<string>حسنا</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_Discard</key>
+	<dict>
+		<key>value</key>
+		<string>تجاهل</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_SignUpEmptyPasswordTittle</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال كلمة المرور</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signUpEmptyAlertMessage</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال كل الحقول</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signUpEmptyAlertTittle</key>
+	<dict>
+		<key>value</key>
+		<string>فارغة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_update</key>
+	<dict>
+		<key>value</key>
+		<string>تحديث</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signUp</key>
+	<dict>
+		<key>value</key>
+		<string>سجل</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_lastName</key>
+	<dict>
+		<key>value</key>
+		<string>إدخال اسم آخر</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_firstName</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل الاسم الأول</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signIn</key>
+	<dict>
+		<key>value</key>
+		<string>تسجيل الدخول</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_password</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل كلمة المرور</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_email</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل عنوان البريد الالكتروني</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_username</key>
 	<dict>
 		<key>value</key>

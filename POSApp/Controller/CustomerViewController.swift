@@ -10,8 +10,12 @@ import UIKit
 
 class CustomerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var buttonSubmit: DesignButton!
     var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
     
+    @IBOutlet weak var labelRoll: UILabel!
+    @IBOutlet weak var labelContact: UILabel!
+    @IBOutlet weak var labelLastName: UILabel!
     @IBOutlet weak var labelFirstName: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableViewDropDown: UITableView!
@@ -27,9 +31,10 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLocalization()
         setTextFieldDelegate()
         setCustomColor()
-          labelFirstName.text = Localizator.instance.localize(string: "key_username")
+    
         tableViewDropDown.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -45,6 +50,22 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    func setLocalization(){
+        
+    textFieldFirstName.text = Localizator.instance.localize(string: "key_firstName")
+    textFieldLastName.text = Localizator.instance.localize(string: "key_lastName")
+    textFieldCustmorContact.text = Localizator.instance.localize(string: "key_enterContact")
+    buttonRoll.setTitle(Localizator.instance.localize(string: "key_selectRoll"), for: .normal)
+    buttonSubmit.setTitle(Localizator.instance.localize(string: "key_buttonSubmit"), for: .normal)
+    labelFirstName.text = Localizator.instance.localize(string: "key_firstNameLabel")
+    labelLastName.text = Localizator.instance.localize(string: "key_lastNameLabel")
+    labelRoll.text = Localizator.instance.localize(string: "key_roll")
+    labelContact.text = Localizator.instance.localize(string: "key_contactNo")
+        
+    }
+    
+    @IBAction func buttonActionSubmit(_ sender: Any) {
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1

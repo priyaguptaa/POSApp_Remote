@@ -9,21 +9,61 @@
 import UIKit
 
 class MenuListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+   
+    @IBOutlet weak var labelBottomCategory: UILabel!
+    @IBOutlet weak var labelBelowMenu: UILabel!
+    @IBOutlet weak var buttonMenuGst: DesignButton!
+    @IBOutlet weak var buttonMenuSpecial: DesignButton!
+    @IBOutlet weak var labelBelowMenuSpecial: UILabel!
+    @IBOutlet weak var labelBelowMenuGst: UILabel!
+    @IBOutlet weak var textFieldBelowMenuPrice: UITextField!
+    @IBOutlet weak var labelBelowMenuPrice: UILabel!
+    @IBOutlet weak var textFieldBelowMenu: UITextField!
+    @IBOutlet weak var labelBelowMenuName: UILabel!
+    @IBOutlet weak var labelAboveMenuGst: DesignableLabel!
+    @IBOutlet weak var labelAboveMenuSpecial: DesignableLabel!
+    @IBOutlet weak var labelAboveMenuPrice: DesignableLabel!
+    @IBOutlet weak var labelAboveMenuName: DesignableLabel!
+    @IBOutlet weak var labelMenuNo: DesignableLabel!
+    @IBOutlet weak var labelMenuItems: UILabel!
+    @IBOutlet weak var labelCategoryName: UILabel!
+    @IBOutlet weak var labelBelowCategory: UILabel!
+    @IBOutlet weak var labelAboveCategory: UILabel!
     @IBOutlet weak var viewMenuItem: DesignableView!
     @IBOutlet weak var viewCategory: UIView!
     @IBOutlet weak var tableViewMenuItems: UITableView!
     @IBOutlet weak var tableViewCategory: UITableView!
+    @IBOutlet weak var textFieldCategoryName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setCustomLanguageValue()
         setCustomColor()
         setUpView()
-        
+        self.title = Localizator.instance.localize(string: "key_menu")
         // Do any additional setup after loading the view.
     }
    
+    func setCustomLanguageValue(){
+        
+        labelAboveCategory.text = Localizator.instance.localize(string: "key_category")
+        labelBelowCategory.text = Localizator.instance.localize(string: "key_category")
+        labelBottomCategory.text = Localizator.instance.localize(string: "key_category")
+        labelCategoryName.text = Localizator.instance.localize(string: "key_name")
+        labelBelowMenu.text = Localizator.instance.localize(string: "key_menu")
+        labelMenuItems.text = Localizator.instance.localize(string: "key_menuItems")
+        labelMenuNo.text = Localizator.instance.localize(string: "key_no")
+        labelAboveMenuName.text = Localizator.instance.localize(string: "key_name")
+        labelAboveMenuSpecial.text = Localizator.instance.localize(string: "key_special")
+        labelAboveMenuGst.text = Localizator.instance.localize(string: "key_gst")
+        labelAboveMenuPrice.text = Localizator.instance.localize(string: "key_price")
+        labelBelowMenuName.text = Localizator.instance.localize(string: "key_name")
+        labelBelowMenuPrice.text = Localizator.instance.localize(string: "key_price")
+        labelBelowMenuSpecial.text = Localizator.instance.localize(string: "key_special")
+        labelBelowMenuGst.text = Localizator.instance.localize(string: "key_gst")
+ 
+    }
+    
     // nib register for menu and category cell
     func setUpView(){
         
@@ -73,6 +113,8 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
         else{
         
             let menuListCell = tableViewMenuItems.dequeueReusableCell(withIdentifier: "MenuListTableViewCell") as! MenuListTableViewCell
+            
+            
             return menuListCell
         }
     }
@@ -82,6 +124,13 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
         return 90
         
     }
+    
+    @IBAction func buttonActionMenuSpecial(_ sender: Any) {
+    }
+    
+    @IBAction func buttonActionMenuGst(_ sender: Any) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

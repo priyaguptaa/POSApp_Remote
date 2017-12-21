@@ -9,6 +9,22 @@
 import UIKit
 
 class EmployeeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var labelRate: UILabel!
+    
+    @IBOutlet weak var labelHourly: UILabel!
+    
+    @IBOutlet weak var labelAddress: UILabel!
+    
+    @IBOutlet weak var labelContact: UILabel!
+    @IBOutlet weak var labelRole: UILabel!
+    @IBOutlet weak var labelPassword: UILabel!
+    @IBOutlet weak var labelName: UILabel!
+    
+    @IBOutlet weak var buttonClose: DesignButton!
+    @IBOutlet weak var buttonEdit: DesignButton!
+    @IBOutlet weak var buttonAddNewEmployee: DesignButton!
+    
 
     @IBOutlet weak var tableViewEmployee: UITableView!
     override func viewDidLoad() {
@@ -23,6 +39,15 @@ class EmployeeViewController: UIViewController, UITableViewDelegate, UITableView
         tableViewEmployee.register(UINib(nibName:"EmployeeTableViewCell", bundle: nil), forCellReuseIdentifier: "EmployeeTableViewCell")
         
     }
+    
+    @IBAction func actionAddEmployeeButton(_ sender: Any) {
+    }
+    @IBAction func actionEditButton(_ sender: Any) {
+    }
+    
+    @IBAction func actionCloseButton(_ sender: Any) {
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,7 +60,11 @@ class EmployeeViewController: UIViewController, UITableViewDelegate, UITableView
         return employeeCell
         
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 120
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

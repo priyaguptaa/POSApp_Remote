@@ -16,6 +16,7 @@ class ConfigurationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomColor()
+        setCustomLanguageValue()
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +28,16 @@ class ConfigurationViewController: UIViewController {
     buttonPrint.backgroundColor = UIColor.customLightBlue
         
     }
+    
+    func setCustomLanguageValue(){
+        
+        
+        buttonPrint.setTitle(Localizator.instance.localize(string: "key_buttonPrint"), for: .normal)
+        buttonMenu.setTitle(Localizator.instance.localize(string: "key_buttonMenu"), for: .normal)
+        buttonTable.setTitle(Localizator.instance.localize(string: "key_buttonTable"), for: .normal)
+       
+    }
+
     
     @IBAction func buttonTableAction(_ sender: Any) {
         

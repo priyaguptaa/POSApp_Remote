@@ -10,8 +10,13 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelCategoryName: UILabel!
+    @IBOutlet weak var labelNo: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        labelNo.text = Localizator.instance.localize(string: "key_no")
+        labelCategoryName.text = Localizator.instance.localize(string: "key_name")
         // Initialization code
     }
 

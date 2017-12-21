@@ -16,6 +16,14 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     var menuDictArray : [[String : String]] = [[:]]
    
     var appDelegate = AppDelegate()
+    var home = Localizator.instance.localize(string: "key_tittleHome")
+    var customer = Localizator.instance.localize(string: "key_buttonCustomer")
+    var configuration = Localizator.instance.localize(string: "key_buttonConfiguration")
+    var endOfDay = Localizator.instance.localize(string: "key_buttonEndOfDay")
+    var orders = Localizator.instance.localize(string: "key_buttonOrders")
+    var management = Localizator.instance.localize(string: "key_buttonManagement")
+    var logOut = Localizator.instance.localize(string: "key_logOut")
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +46,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     func loadData(){
         
-           menuDictArray = [["name" : "","imageName" : "", "category" : "-1"], ["name" : "Home", "imageName" : "homeBlack_icon","category" : "-1"], ["name" : "Orders", "imageName" : "orderBlack_icon", "category" : "1"], ["name" : "End Of Day", "imageName" : "eodBlack_icon", "category" : "3"],["name" : "Management", "imageName" : "managementBlack_icon", "category" : "2"], ["name" : "Configuration", "imageName" : "configurationBlack_icon", "category" : "-1"], ["name" : "Customer", "imageName" : "customerImg1", "category" : "-1"], ["name" : "Logout", "imageName" : "logoutBlack_icon", "category" : "-1"]]
+           menuDictArray = [["name" : "","imageName" : "", "category" : "-1"], ["name" : home, "imageName" : "homeBlack_icon","category" : "-1"], ["name" : orders, "imageName" : "orderBlack_icon", "category" : "1"], ["name" : endOfDay, "imageName" : "eodBlack_icon", "category" : "3"],["name" : management, "imageName" : "managementBlack_icon", "category" : "2"], ["name" : configuration, "imageName" : "configurationBlack_icon", "category" : "-1"], ["name" : customer, "imageName" : "customerImg1", "category" : "-1"], ["name" : logOut, "imageName" : "logoutBlack_icon", "category" : "-1"]]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,55 +87,55 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
         let nameFetch = menuDictArray[indexPath.row]["name"]
         
-        if(nameFetch == "Orders"){
+        if(nameFetch == orders){
             
             let OrderVC = storyBord.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
                         self.navigationController?.pushViewController(OrderVC, animated: true)
-                        OrderVC.title = "order"
+                        OrderVC.title = orders
         }
             
-        else if(nameFetch == "Home"){
+        else if(nameFetch == home){
             
             let homeVC = storyBord.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeVC, animated: true)
            
         }
             
-        else if(nameFetch == "End Of Day"){
+        else if(nameFetch == endOfDay){
             
             let eodVC = storyBord.instantiateViewController(withIdentifier: "EndOfDayViewController") as! EndOfDayViewController
             self.navigationController?.pushViewController(eodVC, animated: true)
-            eodVC.title = "End Of Day"
+            eodVC.title = endOfDay
             
         }
             
-        else if(nameFetch == "Management"){
+        else if(nameFetch == management){
             
             let mgntVC = storyBord.instantiateViewController(withIdentifier: "ManagementViewController") as! ManagementViewController
             self.navigationController?.pushViewController(mgntVC, animated: true)
-            mgntVC.title = "Management"
+            mgntVC.title = management
         }
             
-        else if(nameFetch == "Configuration"){
+        else if(nameFetch == configuration){
             
             let configVC = storyBord.instantiateViewController(withIdentifier: "ConfigurationViewController") as! ConfigurationViewController
             self.navigationController?.pushViewController(configVC, animated: true)
-            configVC.title = "Configuration"
+            configVC.title = configuration
         }
             
-        else if(nameFetch == "Customer"){
+        else if(nameFetch == customer){
             
             let customerVC = storyBord.instantiateViewController(withIdentifier: "CustomerViewController") as! CustomerViewController
             self.navigationController?.pushViewController(customerVC, animated: true)
-            customerVC.title = "Customer"
+            customerVC.title = customer
         }
             
-        else if(nameFetch == "Logout"){
+        else if(nameFetch == logOut){
             
-             let alertController = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ?", preferredStyle: .alert)
-               let alertControllerNevermind = UIAlertController(title: "Nevermind", message: "Are You Sure to cancel", preferredStyle: .alert)
+            let alertController = UIAlertController(title: logOut, message: Localizator.instance.localize(string: "key_logOutMessage"), preferredStyle: .alert)
+               let alertControllerNevermind = UIAlertController(title: Localizator.instance.localize(string: "key_logOutTittleNevermind"), message: Localizator.instance.localize(string: "key_logOutCancel"), preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Logout ", style: .default, handler: {
+            let okAction = UIAlertAction(title: logOut, style: .default, handler: {
                 alert -> Void in
               
 
@@ -149,7 +157,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
 
             
            
-            let cancelAction  = UIAlertAction(title:"Nevermind", style: .destructive, handler: {
+            let cancelAction  = UIAlertAction(title:Localizator.instance.localize(string: "key_logOutTittleNevermind"), style: .destructive, handler: {
                 alert -> Void in
               
                    alertControllerNevermind.dismiss(animated: true, completion: nil)

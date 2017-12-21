@@ -16,7 +16,7 @@ class EndOfDayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setCustomLanguageValue()
         setCustomColor()
         // Do any additional setup after loading the view.
         
@@ -29,7 +29,12 @@ class EndOfDayViewController: UIViewController {
     buttonEodReport.backgroundColor = UIColor.customLightBlue
         
     }
-    
+    func setCustomLanguageValue(){
+        
+        buttonEod.setTitle(Localizator.instance.localize(string: "key_buttonEod"), for: .normal)
+        buttonEodReport.setTitle(Localizator.instance.localize(string: "key_buttonEodReport"), for: .normal)
+         buttonReserveEod.setTitle(Localizator.instance.localize(string: "key_buttonReserveEod"), for: .normal)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

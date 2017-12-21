@@ -11,9 +11,11 @@ import UIKit
 class InitialViewController: UIViewController {
     
     let reachability = Reachability()!
-    @IBOutlet weak var buttonSignInSignUp: UIButton!
+
+    @IBOutlet weak var buttonAlreadyMember: DesignButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+    self.buttonAlreadyMember.setTitle(Localizator.instance.localize(string: "key_buttonAlreadyMember"), for: .normal)
    self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }

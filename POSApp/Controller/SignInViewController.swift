@@ -10,8 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
    
+    @IBOutlet weak var buttonForgotPassword: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var forgotPasswordAction: UIButton!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var viewPassword: UIView!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -25,6 +25,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        setLocalization()
         setCustomColor()
         setTextFieldDelegate()
         textFieldPlaceHolder()
@@ -33,6 +34,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         textFieldEmail.text = "priya.gupta@gmail.com"
         textFieldPassword.text = "priya123"
         
+     
+        
         // for keybord show and hide
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -40,6 +43,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    func setLocalization(){
+        
+        self.buttonSignIn.setTitle(Localizator.instance.localize(string: "key_signIn"), for: .normal)
+        self.buttonForgotPassword.setTitle(Localizator.instance.localize(string: "key_forgotPassword"), for: .normal)
         
     }
     
@@ -55,8 +64,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     // set textField place holder
     func textFieldPlaceHolder(){
         
-        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: " Enter Email Address")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: "Enter Password")
+        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: Localizator.instance.localize(string: "key_email"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: Localizator.instance.localize(string: "key_password"))
         
     }
     
@@ -86,6 +95,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         var aRect: CGRect = self.view.frame
         aRect.size.height -= kbSize.height
     }
+    
     func keyboardWillHide(notification:NSNotification){
         
         let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)

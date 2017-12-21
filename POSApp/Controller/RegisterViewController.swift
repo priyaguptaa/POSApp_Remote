@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var signInContainerView: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var signUpContainerView: UIView!
-    
+    var sceneType : SceneType? = nil
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

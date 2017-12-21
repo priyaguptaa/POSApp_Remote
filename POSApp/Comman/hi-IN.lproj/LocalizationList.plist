@@ -2,6 +2,434 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_buttonAlreadyMember</key>
+	<dict>
+		<key>value</key>
+		<string>पहले से सदस्य हैं
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_forgotPassword</key>
+	<dict>
+		<key>value</key>
+		<string>पासवर्ड भूल गए</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonSubmit</key>
+	<dict>
+		<key>value</key>
+		<string>जमा करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_selectRoll</key>
+	<dict>
+		<key>value</key>
+		<string>रोल का चयन करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterContact</key>
+	<dict>
+		<key>value</key>
+		<string>संपर्क नंबर दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_lastNameLabel</key>
+	<dict>
+		<key>value</key>
+		<string>अंतिम नाम
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_firstNameLabel</key>
+	<dict>
+		<key>value</key>
+		<string>पहला नाम
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_roll</key>
+	<dict>
+		<key>value</key>
+		<string>रोल</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_contactNo</key>
+	<dict>
+		<key>value</key>
+		<string>संपर्क नंबर</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_category</key>
+	<dict>
+		<key>value</key>
+		<string>वर्ग</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_menu</key>
+	<dict>
+		<key>value</key>
+		<string>मेन्यू</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_menuItems</key>
+	<dict>
+		<key>value</key>
+		<string>विकल्प सूची की चीज़ें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_no</key>
+	<dict>
+		<key>value</key>
+		<string>संख्या</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_name</key>
+	<dict>
+		<key>value</key>
+		<string>नाम</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_price</key>
+	<dict>
+		<key>value</key>
+		<string>मूल्य</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_special</key>
+	<dict>
+		<key>value</key>
+		<string>विशेष</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_gst</key>
+	<dict>
+		<key>value</key>
+		<string>जीएसटी</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonTable</key>
+	<dict>
+		<key>value</key>
+		<string>तालिका</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonMenu</key>
+	<dict>
+		<key>value</key>
+		<string>मेन्यू</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonPrint</key>
+	<dict>
+		<key>value</key>
+		<string>छाप</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonClose</key>
+	<dict>
+		<key>value</key>
+		<string>रद्द करना
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonSave</key>
+	<dict>
+		<key>value</key>
+		<string>सम्मिलित</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dateWithTime</key>
+	<dict>
+		<key>value</key>
+		<string>समय के साथ तारीख</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_contactPeople</key>
+	<dict>
+		<key>value</key>
+		<string>लोगों से संपर्क करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterYourName</key>
+	<dict>
+		<key>value</key>
+		<string>अपना नाम दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonCashInOut</key>
+	<dict>
+		<key>value</key>
+		<string>कैश इन / आउट</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>कर्मचारी</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonTimeStamp</key>
+	<dict>
+		<key>value</key>
+		<string>टाइमस्टैम्प</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonShift</key>
+	<dict>
+		<key>value</key>
+		<string>पाली</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEodReport</key>
+	<dict>
+		<key>value</key>
+		<string>ईओडी रिपोर्ट</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonReserveEod</key>
+	<dict>
+		<key>value</key>
+		<string>रिजर्व एओडी
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEod</key>
+	<dict>
+		<key>value</key>
+		<string>ईओडी</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonReservation</key>
+	<dict>
+		<key>value</key>
+		<string>आरक्षण</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOutCancel</key>
+	<dict>
+		<key>value</key>
+		<string>क्या आप रद्द करना चाहते हैं</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOutTittleNevermind</key>
+	<dict>
+		<key>value</key>
+		<string>कोई बात नहीं</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOutMessage</key>
+	<dict>
+		<key>value</key>
+		<string>क्या आप लॉग आउट करने के लिए सुनिश्चित हैं?</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_logOut</key>
+	<dict>
+		<key>value</key>
+		<string>लोग आउट</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_tittleBack</key>
+	<dict>
+		<key>value</key>
+		<string>वापस</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_tittleHome</key>
+	<dict>
+		<key>value</key>
+		<string>होम</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonCustomer</key>
+	<dict>
+		<key>value</key>
+		<string>ग्राहक
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonConfiguration</key>
+	<dict>
+		<key>value</key>
+		<string>विन्यास</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonOrders</key>
+	<dict>
+		<key>value</key>
+		<string>आदेश</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEndOfDay</key>
+	<dict>
+		<key>value</key>
+		<string>दिन के अंत मे</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonManagement</key>
+	<dict>
+		<key>value</key>
+		<string>प्रबंध</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_saveMessage</key>
+	<dict>
+		<key>value</key>
+		<string>डेटा को सफलतापूर्वक सम्मिलित किया गया</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_saveTittle</key>
+	<dict>
+		<key>value</key>
+		<string>बचाना</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dataUpdateTittle</key>
+	<dict>
+		<key>value</key>
+		<string>डेटा अपडेट किया गया</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_correctEmailOrPassword</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया सही ईमेल या पासवर्ड दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_ok</key>
+	<dict>
+		<key>value</key>
+		<string>ठीक</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_Discard</key>
+	<dict>
+		<key>value</key>
+		<string>छोड़ना</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_SignUpEmptyPasswordTittle</key>
+	<dict>
+		<key>value</key>
+		<string>कृप्या पास्वर्ड भरो</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signUpEmptyAlertMessage</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया सभी क्षेत्र दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signUpEmptyAlertTittle</key>
+	<dict>
+		<key>value</key>
+		<string>खाली</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_update</key>
+	<dict>
+		<key>value</key>
+		<string>अद्यतन करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signUp</key>
+	<dict>
+		<key>value</key>
+		<string>साइन अप करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_lastName</key>
+	<dict>
+		<key>value</key>
+		<string>अंतिम नाम दर्ज करो</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_firstName</key>
+	<dict>
+		<key>value</key>
+		<string>पहला नाम डालो</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signIn</key>
+	<dict>
+		<key>value</key>
+		<string>साइन इन करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_password</key>
+	<dict>
+		<key>value</key>
+		<string>पास वर्ड दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_email</key>
+	<dict>
+		<key>value</key>
+		<string>ईमेल दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_username</key>
 	<dict>
 		<key>value</key>

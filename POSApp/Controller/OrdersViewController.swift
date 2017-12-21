@@ -39,10 +39,11 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         self.hallNameArray = self.tempArray
         // set segment font size
         let attribute = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 25.0)!, forKey: NSFontAttributeName as NSCopying)
         segmentControlOrder.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
-     
+     self.buttonReservation.setTitle(Localizator.instance.localize(string: "key_buttonReservation"), for: .normal)
         setCustomColor()
         setupView()
         // Do any additional setup after loading the view.

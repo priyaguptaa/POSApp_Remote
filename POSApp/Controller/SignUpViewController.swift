@@ -40,12 +40,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
           self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         switch sceneType {
         case .InitialScene?:
-            self.buttonSignUp.titleLabel?.text = "Sign Up"
+           
+              self.buttonSignUp.setTitle(Localizator.instance.localize(string: "key_signUp"), for: .normal)
+              
             break
         case .SideMenuScene?:
             
-            self.buttonSignUp.setTitle("Update", for: .normal)
-                viewPassword.isHidden = true
+            self.buttonSignUp.setTitle(Localizator.instance.localize(string: "key_update"), for: .normal)
+            viewPassword.isHidden = true
             
                 textFieldFirstName.text = firstName
                 textFieldLastName.text = lastName
@@ -77,10 +79,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldPlaceHolder(){
       
-        createAttributedPlacedholderToTextField(currentTextField: textFieldFirstName, currentPlaceholderText: "Enter First Name")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldLastName, currentPlaceholderText: "Enter Last Name")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: "Enter Email Address")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: "Enter Password")
+        createAttributedPlacedholderToTextField(currentTextField: textFieldFirstName, currentPlaceholderText: Localizator.instance.localize(string: "key_firstName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldLastName, currentPlaceholderText: Localizator.instance.localize(string: "key_lastName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: Localizator.instance.localize(string: "key_email"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: Localizator.instance.localize(string: "key_password"))
         
     }
     
@@ -181,7 +183,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let result = UserDefaults.standard.value(forKey: "dataDictionary")
         print("printed  update results user defaults\(result!)")
         
-          showDefaultAlertViewWith(alertTitle: "data update", alertMessage: "data update succesfully", okTitle: "ok", currentViewController: self)
+          showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_dataUpdateTittle"), alertMessage: Localizator.instance.localize(string: "key_dataUpdateMessage"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         
             
             break
@@ -199,9 +201,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){
                 DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)
             
-                let alertController = UIAlertController(title: "save", message: "Data Inserted Successfully", preferredStyle: .alert)
+                let alertController = UIAlertController(title: Localizator.instance.localize(string: "key_saveTittle"), message: Localizator.instance.localize(string: "key_saveMessage"), preferredStyle: .alert)
             
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+                let okAction = UIAlertAction(title: Localizator.instance.localize(string: "key_ok"), style: .default, handler: {
                 alert -> Void in
                     
                     let storyB = UIStoryboard.init(name: "Main", bundle: nil)
@@ -220,28 +222,28 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
         else if ((self.textFieldEmail.text == "") && (self.textFieldPassword.text == "") && (textFieldFirstName.text  == "") && (textFieldLastName.text == "")) {
-            showDefaultAlertViewWith(alertTitle: "empty ", alertMessage: "Please enter all field", okTitle: "discard", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_signUpEmptyAlertTittle"), alertMessage: Localizator.instance.localize(string: "key_signUpEmptyAlertMessage"), okTitle: Localizator.instance.localize(string: "key_Discard"), currentViewController: self)
         }
         else if ((self.textFieldPassword.text == "") && (self.textFieldFirstName.text != "") && (self.textFieldLastName.text != "") && (self.textFieldEmail.text != "")) {
             
-            showDefaultAlertViewWith(alertTitle: "empty", alertMessage: "Please Enter Password", okTitle: "discard", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_signUpEmptyAlertTittle"), alertMessage: Localizator.instance.localize(string: "key_SignUpEmptyPasswordTittle"), okTitle: Localizator.instance.localize(string: "key_Discard"), currentViewController: self)
         }
         else if (textFieldFirstName.text  == "")  {
             
-            showDefaultAlertViewWith(alertTitle: "Error", alertMessage: "please enter first name", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_signUpEmptyAlertTittle"), alertMessage: Localizator.instance.localize(string: "key_firstName"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         }
         else if (textFieldLastName.text  == "") {
             
-            showDefaultAlertViewWith(alertTitle: "Error", alertMessage: "please enter last name", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_signUpEmptyAlertTittle"), alertMessage:  Localizator.instance.localize(string: "key_lastName"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         }
             
         else if(self.textFieldEmail.text == "") {
             
-            showDefaultAlertViewWith(alertTitle: "empty", alertMessage: "Please enter Email Address", okTitle: "dismiss", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_signUpEmptyAlertTittle"), alertMessage: Localizator.instance.localize(string: "key_email"), okTitle:Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         }
         else {
             
-            showDefaultAlertViewWith(alertTitle: "empty", alertMessage: "Please enter correct email & password", okTitle: "discard", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_signUpEmptyAlertTittle"), alertMessage: Localizator.instance.localize(string: "key_correctEmailOrPassword"), okTitle:Localizator.instance.localize(string: "key_Discard"), currentViewController: self)
         }
     }
     override func didReceiveMemoryWarning() {

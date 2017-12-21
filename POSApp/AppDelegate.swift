@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
  var userDefaultsDictionary  : [String:AnyObject]? = [:]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -19,12 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userDefaults = UserDefaults.standard
         self.userDefaultsDictionary = userDefaults.value(forKey: "dataDictionary") as? [String : AnyObject]
         
+        // side menu according to language
+        let language = NSLocale.preferredLanguages.first
+        let Dict : Dictionary = NSLocale.components(fromLocaleIdentifier: language!)
+        let currentLanguageCode = Dict["kCFLocaleLanguageCodeKey"]
+        print("language : \(String(describing: currentLanguageCode) )")
+        POSManger.shared.localizeString = (language )!
+        
         if(userDefaultsDictionary == nil)
         {
-            
-            
+        
             let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
-            let loginVC = storyBord.instantiateViewController(withIdentifier: "RegisterViewController")as! RegisterViewController
+            let loginVC = storyBord.instantiateViewController(withIdentifier: "InitialViewController")as! InitialViewController
             let navigationController = self.window?.rootViewController as! UINavigationController
             navigationController.pushViewController(loginVC, animated: false)
             

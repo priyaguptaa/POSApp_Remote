@@ -16,11 +16,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonManagement: DesignButton!
     @IBOutlet weak var buttonEndOfDay: DesignButton!
     @IBOutlet weak var buttonOrders: DesignButton!
-    @IBOutlet weak var buttonSideMenu: UIButton!
+    var home = Localizator.instance.localize(string: "key_tittleHome")
+    var customer = Localizator.instance.localize(string: "key_buttonCustomer")
+    var configuration = Localizator.instance.localize(string: "key_buttonConfiguration")
+    var endOfDay = Localizator.instance.localize(string: "key_buttonEndOfDay")
+    var orders = Localizator.instance.localize(string: "key_buttonOrders")
+    var management = Localizator.instance.localize(string: "key_buttonManagement")
      
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        setCustomLanguageValue()
         designNavigation()
         setCustomColor()
      //UIApplication.shared.statusBarFrame.backgroundColor = .red
@@ -36,18 +42,28 @@ class HomeViewController: UIViewController {
         buttonConfigration.backgroundColor = UIColor.customLightBlue
         
     }
+    func setCustomLanguageValue(){
+        
+        self.buttonManagement.setTitle(management, for: .normal)
+        self.buttonOrders.setTitle(orders, for: .normal)
+        self.buttonEndOfDay.setTitle(endOfDay, for: .normal)
+        self.buttonCustomer.setTitle(customer, for: .normal)
+        self.buttonConfigration.setTitle(configuration, for: .normal)
+        
+    }
     
     func designNavigation(){
         
         let menuButton = UIBarButtonItem(image: UIImage(named: "menuIcon"), style: .plain, target: self, action: #selector(addTapped))
         navigationItem.leftBarButtonItem  = menuButton
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
-        applyAttributedNavigationBarTitleWith(currentTitle: "Home", currentNavigationController: self.navigationController!)
+        self.title =  Localizator.instance.localize(string: "key_tittleHome")
+//        applyAttributedNavigationBarTitleWith(currentTitle: Localizator.instance.localize(string: "key_tittleHome"), currentNavigationController: self.navigationController!)
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 34)!, NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = UIColor.brown
         self.navigationController?.view.tintColor = UIColor.white
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = Localizator.instance.localize(string: "key_tittleBack")
         navigationItem.backBarButtonItem = backItem
       
         
@@ -58,7 +74,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let configVC = storyBoard.instantiateViewController(withIdentifier: "ConfigurationViewController") as! ConfigurationViewController
         self.navigationController?.pushViewController(configVC, animated: true)
-        configVC.title = "Configuration"
+        configVC.title = configuration
         
     }
     
@@ -67,7 +83,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let customerVC = storyBoard.instantiateViewController(withIdentifier: "CustomerViewController") as! CustomerViewController
         navigationController?.pushViewController(customerVC, animated: true)
-        customerVC.title = "Customer"
+        customerVC.title = customer
         
     }
     
@@ -76,7 +92,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let mgntVC = storyBoard.instantiateViewController(withIdentifier: "ManagementViewController") as! ManagementViewController
         navigationController?.pushViewController(mgntVC, animated: true)
-        mgntVC.title = "Management"
+        mgntVC.title = management
         
     }
     
@@ -85,7 +101,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let eodVC = storyBoard.instantiateViewController(withIdentifier: "EndOfDayViewController") as! EndOfDayViewController
         navigationController?.pushViewController(eodVC, animated: true)
-        eodVC.title = "End Of Day"
+        eodVC.title = endOfDay
         
     }
   
@@ -94,15 +110,22 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let  orderVC = storyBoard.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
         self.navigationController?.pushViewController(orderVC, animated: true)
-        orderVC.title = "Order"
+        orderVC.title = orders
         
     }
     
     func addTapped (sender:UIButton) {
         
-        print("add pressed")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
-        self.present(vc, animated: true, completion: nil)
+        if POSManger.shared.localizeString == "ar-US" {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+            vc.leftSide = false
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+            vc.leftSide = true
+            self.present(vc, animated: true, completion: nil)
+            
+        }
         
     }
     

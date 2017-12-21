@@ -10,10 +10,23 @@ import UIKit
 
 class ManagementViewController: UIViewController {
 
+    @IBOutlet weak var buttonShift: DesignButton!
+    @IBOutlet weak var buttonCashInOut: DesignButton!
+    @IBOutlet weak var buttonEmployee: DesignButton!
+    @IBOutlet weak var buttonTimeStamp: DesignButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setCustomLanguageValue()
         // Do any additional setup after loading the view.
+    }
+    func setCustomLanguageValue(){
+        
+        
+        buttonShift.setTitle(Localizator.instance.localize(string: "key_buttonShift"), for: .normal)
+        buttonTimeStamp.setTitle(Localizator.instance.localize(string: "key_buttonTimeStamp"), for: .normal)
+        buttonEmployee.setTitle(Localizator.instance.localize(string: "key_buttonEmployee"), for: .normal)
+        buttonCashInOut.setTitle(Localizator.instance.localize(string: "key_buttonCashInOut"), for: .normal)
     }
 
     @IBAction func actionButtonShift(_ sender: Any) {

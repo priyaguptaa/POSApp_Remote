@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0124FBCB1FEBE0980017F954 /* AddNewEmployeePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124FBCA1FEBE0980017F954 /* AddNewEmployeePopUpViewController.swift */; };
 		012CBF7B1FE3C71900BD1C1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CBF7A1FE3C71900BD1C1C /* Reachability.swift */; };
 		012CBF7C1FE3DECD00BD1C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012CBF7E1FE3DECD00BD1C1C /* Main.storyboard */; };
 		012CBF831FE3F87A00BD1C1C /* LocalizationList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 012CBF851FE3F87A00BD1C1C /* LocalizationList.plist */; };
@@ -86,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0124FBCA1FEBE0980017F954 /* AddNewEmployeePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEmployeePopUpViewController.swift; sourceTree = "<group>"; };
 		012CBF7A1FE3C71900BD1C1C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		012CBF7D1FE3DECD00BD1C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		012CBF7F1FE3DEE900BD1C1C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				E96027691FD85CD90099AA85 /* CustomerViewController.swift */,
 				0189D1F11FE0DFDB00DC5AAF /* ForgotPasswordViewController.swift */,
 				E960276A1FD85CD90099AA85 /* EndOfDayViewController.swift */,
+				0124FBCA1FEBE0980017F954 /* AddNewEmployeePopUpViewController.swift */,
 				13D9469D1FD9488800E89DD3 /* AddTablesFloorsViewController.swift */,
 				E960276B1FD85CD90099AA85 /* HomeViewController.swift */,
 				E960276C1FD85CD90099AA85 /* ManagementViewController.swift */,
@@ -774,6 +777,7 @@
 				E96027651FD85C0C0099AA85 /* SideMenuTableViewCell.swift in Sources */,
 				E96027961FD85EE00099AA85 /* DBManneger.swift in Sources */,
 				E960277F1FD85CD90099AA85 /* SignInViewController.swift in Sources */,
+				0124FBCB1FEBE0980017F954 /* AddNewEmployeePopUpViewController.swift in Sources */,
 				E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */,
 				012CBF7B1FE3C71900BD1C1C /* Reachability.swift in Sources */,
 			);

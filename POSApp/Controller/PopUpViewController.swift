@@ -22,17 +22,39 @@ class PopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setCustomLanguageValue()
         doneButtonAdd()
         setCustomColor()
+        textFieldPlaceHolder()
         // Do any additional setup after loading the view.
     }
 
     func setCustomColor(){
+        
         buttonSave.backgroundColor = UIColor.customRed
         buttonClose.backgroundColor = UIColor.customRed
-        self.viewPopUp.backgroundColor = UIColor.customWhite
+        self.viewPopUp.backgroundColor = UIColor.customLightGray
+        self.textFieldName.textColor = UIColor.customblack
+        self.textFieldContact.textColor = UIColor.customblack
+        self.textFieldDate.textColor = UIColor.customblack
+        
     }
     
+    func textFieldPlaceHolder(){
+        
+        createAttributedPlacedholderToTextField(currentTextField: textFieldName, currentPlaceholderText: Localizator.instance.localize(string: "key_enterYourName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldContact, currentPlaceholderText: Localizator.instance.localize(string: "key_contactPeople"))
+         createAttributedPlacedholderToTextField(currentTextField: textFieldDate, currentPlaceholderText: Localizator.instance.localize(string: "key_dateWithTime"))
+        
+    }
+    
+    func setCustomLanguageValue(){
+       
+        buttonSave.setTitle(Localizator.instance.localize(string: "key_buttonSave"), for: .normal)
+        buttonClose.setTitle(Localizator.instance.localize(string: "key_buttonClose"), for: .normal)
+    
+    }
+
     @IBAction func buttonCloseAction(_ sender: Any) {
         self.view.removeFromSuperview()
         delegate?.changeBackgroundColor(UIColor.black)
