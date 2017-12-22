@@ -2,6 +2,191 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_enterHourly</key>
+	<dict>
+		<key>value</key>
+		<string>प्रति घंटा दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterRate</key>
+	<dict>
+		<key>value</key>
+		<string>कीमत दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterAddress</key>
+	<dict>
+		<key>value</key>
+		<string>पता लिखिए
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterRole</key>
+	<dict>
+		<key>value</key>
+		<string>भूमिका दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterName</key>
+	<dict>
+		<key>value</key>
+		<string>नाम दर्ज
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_rate</key>
+	<dict>
+		<key>value</key>
+		<string>मूल्य</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_hourly</key>
+	<dict>
+		<key>value</key>
+		<string>प्रति घंटा
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelAddress</key>
+	<dict>
+		<key>value</key>
+		<string>पता</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelContact</key>
+	<dict>
+		<key>value</key>
+		<string>संपर्क करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelPassword</key>
+	<dict>
+		<key>value</key>
+		<string>पारण शब्द
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEdit</key>
+	<dict>
+		<key>value</key>
+		<string>संपादित करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_addNewEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>नया कर्मचारी जोड़ें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_alertMsg</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया सही फ़ील्ड दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyHourly</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया घंटे दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyRate</key>
+	<dict>
+		<key>value</key>
+		<string>दर दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyRole</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया भूमिका दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dismiss</key>
+	<dict>
+		<key>value</key>
+		<string>खारिज</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyAddress</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया पता दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_errorMsg</key>
+	<dict>
+		<key>value</key>
+		<string>त्रुटि संदेश
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyContact</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया संपर्क दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyAlertName</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया नाम दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_insertedMsg</key>
+	<dict>
+		<key>value</key>
+		<string>डेटा सफलतापूर्वक डाला गया</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_successMsg</key>
+	<dict>
+		<key>value</key>
+		<string>सफलता अद्यतन</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_success</key>
+	<dict>
+		<key>value</key>
+		<string>सफलता</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_buttonAlreadyMember</key>
 	<dict>
 		<key>value</key>
@@ -58,7 +243,7 @@
 	<key>key_roll</key>
 	<dict>
 		<key>value</key>
-		<string>रोल</string>
+		<string>भूमिका</string>
 		<key>comment</key>
 		<string></string>
 	</dict>

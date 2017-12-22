@@ -21,8 +21,7 @@ class PopUpViewController: UIViewController {
     let datePickerView:UIDatePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setCustomLanguageValue()
+        setLocalization()
         doneButtonAdd()
         setCustomColor()
         textFieldPlaceHolder()
@@ -48,7 +47,7 @@ class PopUpViewController: UIViewController {
         
     }
     
-    func setCustomLanguageValue(){
+    func setLocalization(){
        
         buttonSave.setTitle(Localizator.instance.localize(string: "key_buttonSave"), for: .normal)
         buttonClose.setTitle(Localizator.instance.localize(string: "key_buttonClose"), for: .normal)

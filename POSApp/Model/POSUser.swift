@@ -15,5 +15,14 @@ struct UserInfo {
     var email: String!
     var password: String!
 }
-
+struct EmployeeInfo {
+    var employeeId: Int!
+    var EmployeeName: String!
+    var password: String!
+    var role: String!
+    var contact: String!
+    var address: String!
+    var rate: String!
+    var hourly: String!
+}
 

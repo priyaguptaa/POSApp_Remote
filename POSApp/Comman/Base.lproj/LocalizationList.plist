@@ -2,6 +2,174 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_enterHourly</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Hourly</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterRate</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Rate</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterAddress</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Address</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterRole</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Role</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterName</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_rate</key>
+	<dict>
+		<key>value</key>
+		<string>Rate</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_hourly</key>
+	<dict>
+		<key>value</key>
+		<string>Hourly</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelAddress</key>
+	<dict>
+		<key>value</key>
+		<string>Address</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelContact</key>
+	<dict>
+		<key>value</key>
+		<string>Contact</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelPassword</key>
+	<dict>
+		<key>value</key>
+		<string>Password</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEdit</key>
+	<dict>
+		<key>value</key>
+		<string>Edit</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_addNewEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>Add New Employee</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_alertMsg</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Correct Fields</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyHourly</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Hours</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyRate</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Rate</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyRole</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Role</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dismiss</key>
+	<dict>
+		<key>value</key>
+		<string>Dismiss</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyAddress</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Address</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_errorMsg</key>
+	<dict>
+		<key>value</key>
+		<string>Error Msg</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyContact</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Contact</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyAlertName</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_insertedMsg</key>
+	<dict>
+		<key>value</key>
+		<string>Data Inserted Successfully</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_successMsg</key>
+	<dict>
+		<key>value</key>
+		<string>Success Update</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_success</key>
+	<dict>
+		<key>value</key>
+		<string>Success</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_buttonAlreadyMember</key>
 	<dict>
 		<key>value</key>
@@ -54,7 +222,7 @@
 	<key>key_roll</key>
 	<dict>
 		<key>value</key>
-		<string>Roll</string>
+		<string>Role</string>
 		<key>comment</key>
 		<string></string>
 	</dict>

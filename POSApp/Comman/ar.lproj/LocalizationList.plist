@@ -2,6 +2,192 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_enterHourly</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل ساعة
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterRate</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل السعر
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterAddress</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل العنوان
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterRole</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل الدور
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_enterName</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل الاسم
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_rate</key>
+	<dict>
+		<key>value</key>
+		<string>السعر</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_hourly</key>
+	<dict>
+		<key>value</key>
+		<string>باستمرار</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelAddress</key>
+	<dict>
+		<key>value</key>
+		<string>عنوان</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelContact</key>
+	<dict>
+		<key>value</key>
+		<string>اتصل</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_labelPassword</key>
+	<dict>
+		<key>value</key>
+		<string>كلمه السر
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_buttonEdit</key>
+	<dict>
+		<key>value</key>
+		<string>تصحيح</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_addNewEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>إضافة موظف جديد
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_alertMsg</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال الحقول الصحيحة
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyHourly</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال ساعات
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyRate</key>
+	<dict>
+		<key>value</key>
+		<string>يرجى إدخال السعر
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyRole</key>
+	<dict>
+		<key>value</key>
+		<string>يرجى إدخال الدور
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dismiss</key>
+	<dict>
+		<key>value</key>
+		<string>رفض</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyAddress</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال العنوان
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_errorMsg</key>
+	<dict>
+		<key>value</key>
+		<string>خطأ مسغ
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyContact</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال جهة الاتصال
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyAlertName</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال الاسم
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_insertedMsg</key>
+	<dict>
+		<key>value</key>
+		<string>تم إدراج البيانات بنجاح
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_successMsg</key>
+	<dict>
+		<key>value</key>
+		<string>تحديث النجاح
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_success</key>
+	<dict>
+		<key>value</key>
+		<string>نجاح
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_buttonAlreadyMember</key>
 	<dict>
 		<key>value</key>

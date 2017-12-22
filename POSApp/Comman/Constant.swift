@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 
 public enum SceneType{
+    
     case InitialScene
     case SideMenuScene
+    case addEmpolyeeScene
+    case editEmployeeScene
+    
 }
 
 func  showDefaultAlertViewWith(alertTitle:String, alertMessage:String, okTitle:String, currentViewController :UIViewController) {

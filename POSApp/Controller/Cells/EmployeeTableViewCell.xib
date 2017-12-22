@@ -83,6 +83,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelAddress" destination="gzP-RX-MY1" id="15B-sK-vUt"/>
+                <outlet property="labelContact" destination="Iub-S4-iJ5" id="zai-db-At0"/>
+                <outlet property="labelHourly" destination="3Co-3L-mxA" id="INI-5x-cGF"/>
+                <outlet property="labelName" destination="GM6-EX-qCA" id="rlv-nD-0bj"/>
+                <outlet property="labelPassword" destination="KVn-OJ-o8Y" id="qps-SD-cH9"/>
+                <outlet property="labelRate" destination="UjI-zW-dFI" id="fdt-Ew-7hd"/>
+                <outlet property="labelRole" destination="2zQ-lw-f55" id="0ts-o0-A4i"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

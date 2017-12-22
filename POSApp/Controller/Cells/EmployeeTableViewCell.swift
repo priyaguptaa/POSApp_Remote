@@ -10,6 +10,13 @@ import UIKit
 
 class EmployeeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelRate: UILabel!
+    @IBOutlet weak var labelHourly: UILabel!
+    @IBOutlet weak var labelAddress: UILabel!
+    @IBOutlet weak var labelContact: UILabel!
+    @IBOutlet weak var labelRole: UILabel!
+    @IBOutlet weak var labelPassword: UILabel!
+    @IBOutlet weak var labelName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
