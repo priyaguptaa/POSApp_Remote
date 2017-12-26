@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -101,6 +101,7 @@
                             <constraint firstItem="tOT-Zy-Yfu" firstAttribute="leading" secondItem="O6B-Sh-zxG" secondAttribute="trailing" constant="-1" id="40C-0K-9eN"/>
                             <constraint firstItem="kjj-xm-zXA" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="5lp-Lb-hGz"/>
                             <constraint firstItem="R7t-MF-bfI" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="6h8-6k-FtY"/>
+                            <constraint firstItem="kjj-xm-zXA" firstAttribute="leading" secondItem="z4r-Mn-ZF5" secondAttribute="trailing" id="8di-7o-lAd"/>
                             <constraint firstAttribute="bottom" secondItem="R7t-MF-bfI" secondAttribute="bottom" constant="10" id="BdX-fi-aXK"/>
                             <constraint firstAttribute="bottom" secondItem="z4r-Mn-ZF5" secondAttribute="bottom" constant="10" id="EP8-QH-R2T"/>
                             <constraint firstItem="tOT-Zy-Yfu" firstAttribute="top" secondItem="Y4C-5z-KDe" secondAttribute="top" constant="10" id="Eyc-ry-Dm4"/>

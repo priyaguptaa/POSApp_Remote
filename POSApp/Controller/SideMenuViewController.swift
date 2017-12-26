@@ -67,7 +67,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
 
             userProfileCell.labelFirstName.text = self.userDefaultsDictionary["firstName"]! + " " + self.userDefaultsDictionary["lastName"]!
         
-            userProfileCell.labelEmailAddress.text = self.userDefaultsDictionary["userEmail"]!
+            userProfileCell.labelEmailAddress.text = self.userDefaultsDictionary["userEmail"]
             return userProfileCell
             
         }
@@ -135,7 +135,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             let alertController = UIAlertController(title: logOut, message: Localizator.instance.localize(string: "key_logOutMessage"), preferredStyle: .alert)
                let alertControllerNevermind = UIAlertController(title: Localizator.instance.localize(string: "key_logOutTittleNevermind"), message: Localizator.instance.localize(string: "key_logOutCancel"), preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: logOut, style: .default, handler: {
+            let okAction = UIAlertAction(title: logOut, style: .destructive, handler: {
                 alert -> Void in
               
 
@@ -157,7 +157,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
 
             
            
-            let cancelAction  = UIAlertAction(title:Localizator.instance.localize(string: "key_logOutTittleNevermind"), style: .destructive, handler: {
+            let cancelAction  = UIAlertAction(title:Localizator.instance.localize(string: "key_logOutTittleNevermind"), style: .default, handler: {
                 alert -> Void in
               
                    alertControllerNevermind.dismiss(animated: true, completion: nil)

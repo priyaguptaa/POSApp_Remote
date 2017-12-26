@@ -30,10 +30,15 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
   
         super.viewDidLoad()
         
-           setTextFieldDelegate()
-            textFieldPlaceHolder()
+        setTextFieldDelegate()
+        textFieldPlaceHolder()
         let userDefaults = UserDefaults.standard
+        if  (userDefaults.value(forKey: "employeeInfoDict") as? [String:String]) != nil {
       self.userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as! [String:String]
+        }
+        else{
+            print("error")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
@@ -43,7 +48,6 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
             self.buttonClose.setTitle( Localizator.instance.localize(string: "key_buttonClose"), for: .normal)
             break
         case .editEmployeeScene?:
-            
             self.textFieldName.text = userDefaultsDictionary["name"]
             self.textFieldPassword.text = userDefaultsDictionary["password"]
             self.textFieldRole.text = userDefaultsDictionary["role"]
@@ -117,17 +121,20 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func actionSaveButton(_ sender: Any) {
+        
         switch sceneType {
+            
         case .addEmpolyeeScene?:
-            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
-            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
-            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
-            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
-            print("reasult is \(result!)")
+//            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
+//            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
+//            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
+//            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
+//            print("reasult is \(result!)")
             checkFieldsValidation()
             delegate?.loadEmployeeDetail()
             
             break
+            
         case .editEmployeeScene?:
             
             DBManager.shared.updateEmployeeInfo(name: self.textFieldName.text!, pwd: textFieldPassword.text!, contact: textFieldRole.text!, address: textFieldContact.text!, role: textFieldAddress.text!, rate: textFieldRate.text!, hourly: textFieldHourly.text!)
