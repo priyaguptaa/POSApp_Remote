@@ -25,12 +25,16 @@ PODS:
   - FBSDKShareKit (4.29.0):
     - FBSDKCoreKit
   - SideMenu (2.3.4)
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
   - SideMenu (~> 2.3)
+  - TwitterKit
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -41,7 +45,9 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
   FBSDKShareKit: 18a2cd118aef11dd657fe7e8b64bae5c719088b2
   SideMenu: 2ea1a015d14ffb96110af43fe3232d995943e726
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 94b9acacd1e0c1bd84aa700815e19d22a2256edf
+PODFILE CHECKSUM: 5f79c2fce9cac5040ac39313e629ffbf94e918c1
 
 COCOAPODS: 1.2.0

@@ -964,7 +964,7 @@
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Customer First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-BN-j7h">
                                                         <rect key="frame" x="157" y="0.0" width="771" height="100"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1001,7 +1001,7 @@
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Customer Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDt-pP-1X0">
                                                         <rect key="frame" x="154.5" y="0.0" width="773.5" height="100"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1037,7 +1037,7 @@
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Customer Contact No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INC-dt-o8A">
                                                         <rect key="frame" x="173" y="0.0" width="755" height="100"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
@@ -2060,57 +2060,58 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="912"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-xQ-Ne9">
-                                                <rect key="frame" x="110" y="90" width="804" height="710"/>
+                                                <rect key="frame" x="160" y="90" width="704" height="710"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aq8-9i-6gl">
-                                                        <rect key="frame" x="10" y="20" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="20" width="684" height="70"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.36090874233128833" colorSpace="calibratedWhite"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="6Gl-3n-CsD"/>
                                                         </constraints>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wN-Ro-qG8">
-                                                        <rect key="frame" x="10" y="110" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="110" width="684" height="70"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-H2-TVR">
-                                                        <rect key="frame" x="10" y="200" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="200" width="684" height="70"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lE4-sH-PzO">
-                                                        <rect key="frame" x="10" y="290" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="290" width="684" height="70"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbK-DL-OkJ">
-                                                        <rect key="frame" x="10" y="380" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="380" width="684" height="70"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9We-hd-fpn">
-                                                        <rect key="frame" x="10" y="470" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="470" width="684" height="70"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0J-M4-Fjr">
-                                                        <rect key="frame" x="10" y="560" width="784" height="70"/>
+                                                        <rect key="frame" x="10" y="560" width="684" height="70"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -2130,7 +2131,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEF-XL-6jJ">
-                                                        <rect key="frame" x="601" y="652" width="168" height="50"/>
+                                                        <rect key="frame" x="501" y="652" width="168" height="50"/>
                                                         <color key="backgroundColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="5lo-dW-eO7"/>
@@ -2188,8 +2189,8 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="0xg-xQ-Ne9" secondAttribute="bottom" constant="112" id="6U0-mz-rf6"/>
                                             <constraint firstItem="0xg-xQ-Ne9" firstAttribute="top" secondItem="iKB-nV-8Ys" secondAttribute="top" constant="90" id="AvS-Wy-wd5"/>
-                                            <constraint firstItem="0xg-xQ-Ne9" firstAttribute="leading" secondItem="iKB-nV-8Ys" secondAttribute="leading" constant="110" id="Efz-hM-uSe"/>
-                                            <constraint firstAttribute="trailing" secondItem="0xg-xQ-Ne9" secondAttribute="trailing" constant="110" id="GoT-za-nyk"/>
+                                            <constraint firstItem="0xg-xQ-Ne9" firstAttribute="leading" secondItem="iKB-nV-8Ys" secondAttribute="leading" constant="160" id="Efz-hM-uSe"/>
+                                            <constraint firstAttribute="trailing" secondItem="0xg-xQ-Ne9" secondAttribute="trailing" constant="160" id="GoT-za-nyk"/>
                                             <constraint firstAttribute="width" constant="1024" id="ajr-JI-Ndj"/>
                                         </constraints>
                                     </view>
@@ -2777,7 +2778,7 @@
                                 <rect key="frame" x="0.0" y="20" width="1024" height="668"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-i4-uZu">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="624"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOq-6b-hsY" customClass="DesignableView" customModule="POSApp" customModuleProvider="target">
                                                 <rect key="frame" x="147" y="140" width="730" height="98"/>
@@ -2850,7 +2851,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-wf-bMp" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                                <rect key="frame" x="157.5" y="430" width="709" height="70"/>
+                                                <rect key="frame" x="157.5" y="416" width="709" height="70"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="jCz-sY-Wsd"/>
@@ -2875,7 +2876,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpe-oA-NUC">
-                                                <rect key="frame" x="409" y="580" width="522" height="54"/>
+                                                <rect key="frame" x="409" y="536" width="522" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="BcN-cF-rt9"/>
                                                 </constraints>
@@ -2893,16 +2894,16 @@
                                             <constraint firstItem="S2r-wf-bMp" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="157.5" id="4u0-Fi-mF7"/>
                                             <constraint firstItem="dpe-oA-NUC" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="409" id="AzU-HF-VXs"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="top" secondItem="cOq-6b-hsY" secondAttribute="bottom" constant="40" id="C9u-wE-CLk"/>
-                                            <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="54" id="HG5-qj-3mp"/>
+                                            <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="40" id="HG5-qj-3mp"/>
                                             <constraint firstAttribute="trailing" secondItem="S2r-wf-bMp" secondAttribute="trailing" constant="157.5" id="MFD-If-cJQ"/>
-                                            <constraint firstItem="dpe-oA-NUC" firstAttribute="top" secondItem="S2r-wf-bMp" secondAttribute="bottom" constant="80" id="Q1h-TK-YYI"/>
+                                            <constraint firstItem="dpe-oA-NUC" firstAttribute="top" secondItem="S2r-wf-bMp" secondAttribute="bottom" constant="50" id="Q1h-TK-YYI"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="147" id="Roy-Pg-fLb"/>
                                             <constraint firstAttribute="trailing" secondItem="cOq-6b-hsY" secondAttribute="trailing" constant="147" id="TE0-Ls-75W"/>
                                             <constraint firstAttribute="trailing" secondItem="QfL-KV-feC" secondAttribute="trailing" constant="147" id="Tv8-cU-vOJ"/>
                                             <constraint firstAttribute="trailing" secondItem="dpe-oA-NUC" secondAttribute="trailing" constant="93" id="Zae-ge-Ntd"/>
                                             <constraint firstAttribute="bottom" secondItem="dpe-oA-NUC" secondAttribute="bottom" constant="34" id="hFB-aZ-kqX"/>
                                             <constraint firstItem="cOq-6b-hsY" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="147" id="lgn-Lg-BiQ"/>
-                                            <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="54" id="qnV-Qb-zws"/>
+                                            <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="40" id="qnV-Qb-zws"/>
                                             <constraint firstItem="cOq-6b-hsY" firstAttribute="top" secondItem="wVF-i4-uZu" secondAttribute="top" constant="140" id="tPE-uK-hlg"/>
                                         </constraints>
                                     </view>
@@ -2961,7 +2962,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3B4-Xk-0Jm">
                                 <rect key="frame" x="289" y="104" width="484" height="500"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Your Name" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-7j-r6B" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-7j-r6B" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="26" y="54" width="432" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="v9u-4H-tbA"/>
@@ -2977,7 +2978,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contact Peoples" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="6K5-Hc-E9s" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="6K5-Hc-E9s" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="26" y="155" width="432" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="qxI-Kk-QU0"/>
@@ -2993,7 +2994,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Date With Time" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="yAq-Rc-gZG" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="yAq-Rc-gZG" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="26" y="256" width="432" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="lNI-td-NTj"/>

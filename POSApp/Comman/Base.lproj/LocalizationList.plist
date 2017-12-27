@@ -201,7 +201,7 @@
 	<key>key_selectRoll</key>
 	<dict>
 		<key>value</key>
-		<string></string>
+		<string>Select Role</string>
 		<key>comment</key>
 		<string></string>
 	</dict>
@@ -475,6 +475,13 @@
 	<dict>
 		<key>value</key>
 		<string>Management</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_saveMessage</key>
+	<dict>
+		<key>value</key>
+		<string>data save succesfully</string>
 		<key>comment</key>
 		<string></string>
 	</dict>

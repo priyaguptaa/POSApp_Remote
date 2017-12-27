@@ -35,26 +35,23 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
-    
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb177519616167306</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>177519616167306</string>
-    <key>FacebookDisplayName</key>
-    <string>POSApp1</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-EczAT7TpVZjtmSYWNLNKJeefo</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>177519616167306</string>
+	<key>FacebookDisplayName</key>
+	<string>POSApp1</string>
     <key>LSApplicationQueriesSchemes</key>
     <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
+        <string>twitter</string>
+        <string>twitterauth</string>
     </array>
 </dict>
 </plist>

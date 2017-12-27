@@ -9,6 +9,7 @@
 import UIKit
 import FacebookLogin
 import FBSDKLoginKit
+import TwitterKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
    
@@ -27,6 +28,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        twiterLogin()
         facebookLoad()
         setLocalization()
         setCustomColor()
@@ -110,40 +112,39 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func facebookLoad() {
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        let newFrame = CGPoint(x: 700, y:400)
+        let newFrame = CGPoint(x: 300, y:520)
         loginButton.center = newFrame
         loginButton.delegate = self
         view.addSubview(loginButton)
-        //
-        //       // Mark :- custom
-        //    let myLoginButton = UIButton(type: .custom)
-        //        myLoginButton.backgroundColor = UIColor.blue
-        //        myLoginButton.frame = CGRect(x: 100, y: 100, width: 180, height: 80)
-        //        myLoginButton.center = view.center
-        //        myLoginButton.setTitle("Facebook Login ", for: .normal)
-        //
-        //        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
-        //
-        //       //  Add the button to the view
-        //        view.addSubview(myLoginButton)
+       
     }
+    
+    func twiterLogin(){
+        
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                print("signed in as \(session?.userName)")
+            } else {
+                print("error: \(error?.localizedDescription)")
+            }
+        })
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
+        let newFrame = CGPoint(x: 720, y:520)
+        logInButton.center = newFrame
+//        logInButton.delegate = self
+    }
+    
     // Once the button is clicked, show the login dialog
     @objc func loginButtonClicked() {
         let loginManager = LoginManager()
         
         loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { (loginResult) in
-            
-            
+
             let responseResult = loginResult as! NSDictionary
             let strEmail: String = (responseResult.object(forKey: "email") as? String)!;
-            let strFirstName: String = (responseResult.object(forKey: "first_name") as? String)!//            switch loginResult {
-            //            case .failed(let error):
-            //                print(error)
-            //            case .cancelled:
-            //                print("User cancelled login.")
-            //            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
-            //                print("Logged in!")
-            //            }
+            let strFirstName: String = (responseResult.object(forKey: "first_name") as? String)!
+            
         }
         
     }

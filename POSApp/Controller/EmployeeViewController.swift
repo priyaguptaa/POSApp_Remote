@@ -61,7 +61,7 @@ class EmployeeViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         setUpView()
         setLocalization()
-        self.tableViewEmployee.estimatedRowHeight = 80
+        self.tableViewEmployee.estimatedRowHeight = 100
         self.tableViewEmployee.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view.
     }
