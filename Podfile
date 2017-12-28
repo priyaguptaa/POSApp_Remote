@@ -9,6 +9,7 @@ target 'POSApp' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'TwitterKit'
+pod 'Google/SignIn'
   # Pods for POSApp
 
 

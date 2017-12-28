@@ -17,6 +17,7 @@
 		0189D1F61FE2968100DC5AAF /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */; };
 		0189D1F91FE29FE400DC5AAF /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */; };
 		0189D1FA1FE29FE400DC5AAF /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0189D1F81FE29FE400DC5AAF /* EmployeeTableViewCell.xib */; };
+		018E3E1D1FF4EAE800E4618F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018E3E1C1FF4EAE700E4618F /* GoogleService-Info.plist */; };
 		1366E6771FDA8710000419D8 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366E6751FDA8710000419D8 /* UserProfileTableViewCell.swift */; };
 		1366E6781FDA8710000419D8 /* UserProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1366E6761FDA8710000419D8 /* UserProfileTableViewCell.xib */; };
 		13D9469E1FD9488900E89DD3 /* AddTablesFloorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9469D1FD9488800E89DD3 /* AddTablesFloorsViewController.swift */; };
@@ -103,6 +104,7 @@
 		0189D1F51FE2968100DC5AAF /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		0189D1F71FE29FE400DC5AAF /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		0189D1F81FE29FE400DC5AAF /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		018E3E1C1FF4EAE700E4618F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1366E6751FDA8710000419D8 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		1366E6761FDA8710000419D8 /* UserProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileTableViewCell.xib; sourceTree = "<group>"; };
 		13D9469D1FD9488800E89DD3 /* AddTablesFloorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTablesFloorsViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				E92676B21FD84A5D0077983F /* Controller */,
 				E92676561FD83E4C0077983F /* AppDelegate.swift */,
 				E926765D1FD83E4C0077983F /* Assets.xcassets */,
+				018E3E1C1FF4EAE700E4618F /* GoogleService-Info.plist */,
 				E92676621FD83E4D0077983F /* Info.plist */,
 			);
 			path = POSApp;
@@ -565,6 +568,7 @@
 				012CBF831FE3F87A00BD1C1C /* LocalizationList.plist in Resources */,
 				E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */,
 				13D946A01FD948B100E89DD3 /* AddFloorCollectionViewCell.xib in Resources */,
+				018E3E1D1FF4EAE800E4618F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

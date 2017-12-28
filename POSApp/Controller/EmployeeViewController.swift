@@ -14,7 +14,7 @@ protocol AddNewEmployeePopUpViewControllerDelegate: class {
     
 }
 
-class EmployeeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,AddNewEmployeePopUpViewControllerDelegate {
+class EmployeeViewController: UIViewController, AddNewEmployeePopUpViewControllerDelegate {
     
     
     @IBOutlet weak var labelRate: UILabel!
@@ -57,6 +57,7 @@ class EmployeeViewController: UIViewController, UITableViewDelegate, UITableView
         labelHourly.text = Localizator.instance.localize(string: "key_hourly")
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -105,37 +106,37 @@ class EmployeeViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+   
+ 
+    override func viewWillAppear(_ animated: Bool) {
         
-        return 1
+        self.employeeListArray = DBManager.shared.fetchEmployeeInfo()
+        self.tableViewEmployee.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return employeeListArray.count
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let employeeCell = tableViewEmployee.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell") as! EmployeeTableViewCell
-        
-        let objEmployee = employeeListArray[indexPath.row]
-        if objEmployee != nil {
-        employeeCell.labelName.text = objEmployee.EmployeeName
-        employeeCell.labelPassword.text = objEmployee.password
-        employeeCell.labelRole.text = objEmployee.role
-        employeeCell.labelContact.text = objEmployee.contact
-        employeeCell.labelAddress.text = objEmployee.address
-        employeeCell.labelRate.text = objEmployee.rate
-        employeeCell.labelHourly.text = objEmployee.hourly
-     
-        }
-        else {
-            
-            
-        }
-           return employeeCell
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
+}
+
+//MARK:- TableView Delegate
+
+extension EmployeeViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let objEmployee = employeeListArray[indexPath.row]
@@ -157,31 +158,35 @@ class EmployeeViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+}
+
+// MARK:- Tabelview Datasource
+
+extension EmployeeViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        self.employeeListArray = DBManager.shared.fetchEmployeeInfo()
-        self.tableViewEmployee.reloadData()
+        return employeeListArray.count
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        return 120
-//
-//    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let employeeCell = tableViewEmployee.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell") as! EmployeeTableViewCell
+        
+        let objEmployee = employeeListArray[indexPath.row]
+        if objEmployee != nil {
+            employeeCell.labelName.text = objEmployee.EmployeeName
+            employeeCell.labelPassword.text = objEmployee.password
+            employeeCell.labelRole.text = objEmployee.role
+            employeeCell.labelContact.text = objEmployee.contact
+            employeeCell.labelAddress.text = objEmployee.address
+            employeeCell.labelRate.text = objEmployee.rate
+            employeeCell.labelHourly.text = objEmployee.hourly
+            
+        }
+        else {
+            
+            
+        }
+        return employeeCell
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

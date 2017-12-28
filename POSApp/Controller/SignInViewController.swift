@@ -10,8 +10,11 @@ import UIKit
 import FacebookLogin
 import FBSDKLoginKit
 import TwitterKit
-
-class SignInViewController: UIViewController, UITextFieldDelegate {
+import GoogleSignIn
+import Google
+class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
+  
+    
    
     @IBOutlet weak var buttonForgotPassword: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -28,6 +31,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        gmailLogin()
         twiterLogin()
         facebookLoad()
         setLocalization()
@@ -49,6 +53,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        GIDSignIn.sharedInstance().signOut()
     }
     func setLocalization(){
         
@@ -112,7 +120,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func facebookLoad() {
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        let newFrame = CGPoint(x: 300, y:520)
+        let newFrame = CGPoint(x: 220, y:520)
         loginButton.center = newFrame
         loginButton.delegate = self
         view.addSubview(loginButton)
@@ -124,13 +132,53 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 print("signed in as \(session?.userName)")
-            } else {
+                
+                print("signed in as \(session!.userName)");
+                let client = TWTRAPIClient.withCurrentUser()
+                let request = client.urlRequest(withMethod: "GET",
+                                                urlString: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true",
+                                                parameters: ["include_email": "true", "skip_status": "true"],
+                                                error: nil)
+                client.sendTwitterRequest(request) { response, data, connectionError in
+                    if (connectionError == nil) {
+                        
+                        do{
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                            print("Json response: ", json)
+                            let firstName = json["name"]
+                            let lastName = json["screen_name"]
+                            let email = json["email"]
+                            print("First name: ",firstName ?? "")
+                            print("Last name: ",lastName ?? "")
+                            print("Email: ",email ?? "")
+                            let dataDictionary:[String:String] = ["userEmail":email as! String,"firstName":firstName as! String,"lastName": "" as! String]
+                            UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
+                            let result = UserDefaults.standard.value(forKey: "dataDictionary")
+                            print(result!)
+                            
+                            let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+                            let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+                            self.appDelegate.window?.rootViewController = navVC
+                            
+                        } catch {
+                            
+                        }
+                        
+                    }
+                  
+                    else {
+                        print("Error: \(connectionError)")
+                    }
+                }
+                
+                    } else {
                 print("error: \(error?.localizedDescription)")
             }
+         
         })
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
-        let newFrame = CGPoint(x: 720, y:520)
+        let newFrame = CGPoint(x: 580, y:520)
         logInButton.center = newFrame
 //        logInButton.delegate = self
     }
@@ -147,6 +195,54 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             
         }
         
+    }
+    
+    func gmailLogin(){
+        //error object
+        var error : NSError?
+        
+        //setting the error
+        GGLContext.sharedInstance().configureWithError(&error)
+        
+        //if any error stop execution and print error
+        if error != nil{
+            print(error ?? "google error")
+            return
+        }
+        
+        
+        //adding the delegates
+        GIDSignIn.sharedInstance().uiDelegate = self as! GIDSignInUIDelegate
+        GIDSignIn.sharedInstance().delegate = self
+        
+        //getting the signin button and adding it to view
+        let googleSignInButton = GIDSignInButton()
+        googleSignInButton.center = view.center
+        view.addSubview(googleSignInButton)
+        let newFrame = CGPoint(x: 880, y:520)
+        googleSignInButton.center = newFrame
+        
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        //if any error stop and print the error
+        if error != nil{
+            print(error ?? "google error")
+            return
+        }
+        
+        //if success display the email on label
+        var email = user.profile.email
+        var firstName = user.profile.givenName
+        var lastName = user.profile.familyName
+        let dataDictionary:[String:String] = ["userEmail":email as! String,"firstName":firstName as! String,"lastName": lastName as! String]
+        UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
+        let result = UserDefaults.standard.value(forKey: "dataDictionary")
+        print(result!)
+        
+        let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+        let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+        self.appDelegate.window?.rootViewController = navVC
     }
     func checkingNetworkReachability(){
         
