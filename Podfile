@@ -10,6 +10,7 @@ target 'POSApp' do
   pod 'FacebookShare'
   pod 'TwitterKit'
 pod 'Google/SignIn'
+pod 'LinkedinSwift', '~> 1.6.6'
   # Pods for POSApp
 
 

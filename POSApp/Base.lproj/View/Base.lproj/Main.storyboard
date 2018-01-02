@@ -2069,7 +2069,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="6Gl-3n-CsD"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -2784,7 +2784,7 @@
                                 <rect key="frame" x="0.0" y="20" width="1024" height="668"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-i4-uZu">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="624"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="594"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOq-6b-hsY" customClass="DesignableView" customModule="POSApp" customModuleProvider="target">
                                                 <rect key="frame" x="147" y="140" width="730" height="98"/>
@@ -2857,7 +2857,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-wf-bMp" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                                <rect key="frame" x="157.5" y="416" width="709" height="70"/>
+                                                <rect key="frame" x="187" y="416" width="650" height="70"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="jCz-sY-Wsd"/>
@@ -2882,7 +2882,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpe-oA-NUC">
-                                                <rect key="frame" x="409" y="536" width="522" height="54"/>
+                                                <rect key="frame" x="720" y="506" width="304" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="BcN-cF-rt9"/>
                                                 </constraints>
@@ -2894,23 +2894,40 @@
                                                     <action selector="forgotPasswordAction:" destination="f1c-6U-sWb" eventType="touchUpInside" id="Fvx-8y-Oxa"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwh-Gu-nYP">
+                                                <rect key="frame" x="187" y="554" width="650" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="9tS-pi-sWL"/>
+                                                    <constraint firstAttribute="width" constant="650" id="rJd-kf-OmQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <state key="normal" title="Linked in login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ActionButtonLinkedIn:" destination="f1c-6U-sWb" eventType="touchUpInside" id="613-Tm-7Tt"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="S2r-wf-bMp" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="157.5" id="4u0-Fi-mF7"/>
-                                            <constraint firstItem="dpe-oA-NUC" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="409" id="AzU-HF-VXs"/>
+                                            <constraint firstItem="S2r-wf-bMp" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="187" id="4u0-Fi-mF7"/>
+                                            <constraint firstItem="dpe-oA-NUC" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="720" id="AzU-HF-VXs"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="top" secondItem="cOq-6b-hsY" secondAttribute="bottom" constant="40" id="C9u-wE-CLk"/>
                                             <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="40" id="HG5-qj-3mp"/>
-                                            <constraint firstAttribute="trailing" secondItem="S2r-wf-bMp" secondAttribute="trailing" constant="157.5" id="MFD-If-cJQ"/>
-                                            <constraint firstItem="dpe-oA-NUC" firstAttribute="top" secondItem="S2r-wf-bMp" secondAttribute="bottom" constant="50" id="Q1h-TK-YYI"/>
+                                            <constraint firstAttribute="trailing" secondItem="S2r-wf-bMp" secondAttribute="trailing" constant="187" id="MFD-If-cJQ"/>
+                                            <constraint firstItem="vwh-Gu-nYP" firstAttribute="top" secondItem="S2r-wf-bMp" secondAttribute="bottom" constant="68" id="ObE-fD-3LN"/>
+                                            <constraint firstItem="dpe-oA-NUC" firstAttribute="top" secondItem="S2r-wf-bMp" secondAttribute="bottom" constant="20" id="Q1h-TK-YYI"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="147" id="Roy-Pg-fLb"/>
                                             <constraint firstAttribute="trailing" secondItem="cOq-6b-hsY" secondAttribute="trailing" constant="147" id="TE0-Ls-75W"/>
                                             <constraint firstAttribute="trailing" secondItem="QfL-KV-feC" secondAttribute="trailing" constant="147" id="Tv8-cU-vOJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="dpe-oA-NUC" secondAttribute="trailing" constant="93" id="Zae-ge-Ntd"/>
+                                            <constraint firstAttribute="trailing" secondItem="dpe-oA-NUC" secondAttribute="trailing" id="Zae-ge-Ntd"/>
                                             <constraint firstAttribute="bottom" secondItem="dpe-oA-NUC" secondAttribute="bottom" constant="34" id="hFB-aZ-kqX"/>
                                             <constraint firstItem="cOq-6b-hsY" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="147" id="lgn-Lg-BiQ"/>
                                             <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="40" id="qnV-Qb-zws"/>
                                             <constraint firstItem="cOq-6b-hsY" firstAttribute="top" secondItem="wVF-i4-uZu" secondAttribute="top" constant="140" id="tPE-uK-hlg"/>
+                                            <constraint firstItem="vwh-Gu-nYP" firstAttribute="centerX" secondItem="wVF-i4-uZu" secondAttribute="centerX" id="x51-5y-Ylk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2941,6 +2958,7 @@
                     <size key="freeformSize" width="1024" height="688"/>
                     <connections>
                         <outlet property="buttonForgotPassword" destination="dpe-oA-NUC" id="Zek-Sc-fTL"/>
+                        <outlet property="buttonLinkedIn" destination="vwh-Gu-nYP" id="twP-iM-Etl"/>
                         <outlet property="buttonSignIn" destination="S2r-wf-bMp" id="QPX-bN-twk"/>
                         <outlet property="scrollView" destination="hQs-QT-nW3" id="wde-LT-VEZ"/>
                         <outlet property="textFieldEmail" destination="D6Y-K1-owg" id="nd7-WP-bFq"/>
@@ -2951,7 +2969,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcZ-C9-75G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="398"/>
+            <point key="canvasLocation" x="267.7734375" y="397.65625"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="OLy-26-hf0">

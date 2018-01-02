@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -59,6 +74,11 @@ PODS:
   - GTMSessionFetcher/Core (1.1.12)
   - GTMSessionFetcher/Full (1.1.12):
     - GTMSessionFetcher/Core (= 1.1.12)
+  - IOSLinkedInAPIFix (2.0.4):
+    - AFNetworking (>= 2.0.0)
+  - LinkedinSwift (1.6.6):
+    - AFNetworking (>= 2.6.3)
+    - IOSLinkedInAPIFix (>= 2.0.3)
   - SideMenu (2.3.4)
   - TwitterCore (3.1.0)
   - TwitterKit (3.3.0):
@@ -69,10 +89,12 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
+  - LinkedinSwift (~> 1.6.6)
   - SideMenu (~> 2.3)
   - TwitterKit
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
@@ -88,10 +110,12 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  IOSLinkedInAPIFix: a520fd805a03dade35f42904c7d89ded2a84c752
+  LinkedinSwift: cda2916f08950f662fbec33176dc38aefc5b4c2c
   SideMenu: 2ea1a015d14ffb96110af43fe3232d995943e726
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 39f5f9e725480fe21c5bffe86cb451d0afde0a07
+PODFILE CHECKSUM: 5feac62fc8c2b33b25087065ba5ef2ed425e9346
 
 COCOAPODS: 1.2.0

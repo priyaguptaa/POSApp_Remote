@@ -12,10 +12,11 @@ import FBSDKLoginKit
 import TwitterKit
 import GoogleSignIn
 import Google
+import LinkedinSwift
+
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
   
-    
-   
+    @IBOutlet weak var buttonLinkedIn: UIButton!
     @IBOutlet weak var buttonForgotPassword: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textFieldPassword: UITextField!
@@ -27,7 +28,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
     var dataDictionary : [String:AnyObject] = [:]
     let reachability = Reachability()!
     var activeField: UITextField!
+    let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "777pnvib4ipzt1", clientSecret: "JSr4tNNciSDA6pqY", state: "DLKDJF45DIWOERCM", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "http://localhost/auth/linkedin/callback"))
     
+    // MARK:- view life cycle methods
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -58,12 +61,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
         
         GIDSignIn.sharedInstance().signOut()
     }
+    //
     func setLocalization(){
         
         self.buttonSignIn.setTitle(Localizator.instance.localize(string: "key_signIn"), for: .normal)
         self.buttonForgotPassword.setTitle(Localizator.instance.localize(string: "key_forgotPassword"), for: .normal)
         
     }
+    
     
     // set custom color
     func setCustomColor() {
@@ -118,13 +123,30 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
     }
     
     func facebookLoad() {
+        
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        let newFrame = CGPoint(x: 220, y:520)
-        loginButton.center = newFrame
-        loginButton.delegate = self
+//        let newFrame = CGPoint(x: 220, y:520)
+//        loginButton.center = newFrame
+        loginButton.delegate = self as FBSDKLoginButtonDelegate
         view.addSubview(loginButton)
+        
+        // auto layout constraints
        
+//                loginButton.translatesAutoresizingMaskIntoConstraints = false
+//
+//                let verticalConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 20)
+//
+//        let heightConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 44)
+//
+//        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+//
+//
+//        let topRightViewTrailingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+//
+//        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
     }
     
     func twiterLogin(){
@@ -167,33 +189,35 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
                     }
                   
                     else {
-                        print("Error: \(connectionError)")
+                        print("Error: \(String(describing: connectionError))")
                     }
                 }
                 
                     } else {
-                print("error: \(error?.localizedDescription)")
+                print("error: \(String(describing: error?.localizedDescription))")
             }
          
         })
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
-        let newFrame = CGPoint(x: 580, y:520)
-        logInButton.center = newFrame
-//        logInButton.delegate = self
-    }
-    
-    // Once the button is clicked, show the login dialog
-    @objc func loginButtonClicked() {
-        let loginManager = LoginManager()
+//        let newFrame = CGPoint(x: 580, y:520)
+//        logInButton.center = newFrame
         
-        loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { (loginResult) in
-
-            let responseResult = loginResult as! NSDictionary
-            let strEmail: String = (responseResult.object(forKey: "email") as? String)!;
-            let strFirstName: String = (responseResult.object(forKey: "first_name") as? String)!
-            
-        }
+        // auto layout constraints
+//        logInButton.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        let verticalConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 20)
+//        
+//        let heightConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 44)
+//        
+//        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+//        
+//        
+//        let topRightViewTrailingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+//        
+//        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
         
     }
     
@@ -222,6 +246,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
         let newFrame = CGPoint(x: 880, y:520)
         googleSignInButton.center = newFrame
         
+        // auto layout constraints
+     
+        
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
@@ -244,6 +271,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
         let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
         self.appDelegate.window?.rootViewController = navVC
     }
+    
     func checkingNetworkReachability(){
         
         reachability.whenReachable = { _ in
@@ -285,6 +313,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
             }
         }
     }
+    
     @IBAction func signInAction(_ sender: Any) {
      
         // fetching data base values and checking validation
@@ -332,7 +361,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func ActionButtonLinkedIn(_ sender: Any) {
+    
+        linkedinHelper.authorizeSuccess({ (lsToken) -> Void in
+            //Login success lsToken
+        }, error: { (error) -> Void in
+            //Encounter error: error.localizedDescription
+        }, cancel: { () -> Void in
+            //User Cancelled!
+        })
 }
+}
+
 extension SignInViewController:FBSDKLoginButtonDelegate
 {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {

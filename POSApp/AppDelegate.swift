@@ -11,6 +11,7 @@ import FBSDKLoginKit
 import TwitterKit
 import GoogleSignIn
 import Google
+import LinkedinSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -53,11 +54,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
+    // Facebook
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
+    // Twitter
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
         
@@ -69,7 +71,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
     
-  
+    func application(application: UIApplication,
+                     openURL url: NSURL,
+                     sourceApplication: String?,
+                     annotation: AnyObject) -> Bool {
+        
+        // Linkedin sdk handle redirect
+        if LinkedinSwiftHelper.shouldHandle(url as URL) {
+            return LinkedinSwiftHelper.application(application,
+                                                   open: url as URL,
+                                                   sourceApplication: sourceApplication,
+                                                   annotation: annotation
+            )
+        }
+        
+        return false
+    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -44,9 +44,8 @@ class ForgotPasswordViewController: UIViewController {
         print("value is \(fetchedUser)")
         
         if (fetchedUser.count>0) {
-//            showDefaultAlertViewWith(alertTitle: "error", alertMessage: "error", okTitle: "ok", currentViewController: self)
+            
              if(self.textFieldEmail.text == fetchedUser[0].email){
-//                            showDefaultAlertViewWith(alertTitle: "Empty Email", alertMessage: "please Enter Email Address", okTitle: "ok", currentViewController: self)
                 
                 password = fetchedUser[0].password
                 showDefaultAlertViewWith(alertTitle: "Your Password is", alertMessage: password, okTitle: "ok", currentViewController: self)

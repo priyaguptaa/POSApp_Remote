@@ -10,17 +10,26 @@ import UIKit
 
 class ConfigurationViewController: UIViewController {
 
+    //MARK:- Variable declarations
+    
     @IBOutlet weak var buttonPrint: DesignButton!
     @IBOutlet weak var buttonMenu: DesignButton!
     @IBOutlet weak var buttonTable: DesignButton!
+    
+    // MARK:- View  Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomColor()
         setCustomLanguageValue()
         // Do any additional setup after loading the view.
     }
-
-    // set custom color
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- Helper methods
     func setCustomColor(){
         
     buttonTable.backgroundColor = UIColor.customLightBlue
@@ -38,6 +47,7 @@ class ConfigurationViewController: UIViewController {
        
     }
 
+    // MARK:- Button actions
     
     @IBAction func buttonTableAction(_ sender: Any) {
         
@@ -61,10 +71,7 @@ class ConfigurationViewController: UIViewController {
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
 
     /*

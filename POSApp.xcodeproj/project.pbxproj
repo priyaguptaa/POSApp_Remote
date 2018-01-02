@@ -205,6 +205,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		018E3E5C1FF5E2A200E4618F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				012CBF851FE3F87A00BD1C1C /* LocalizationList.plist */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		61E927590044201B9B0349E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +262,7 @@
 		E92676551FD83E4C0077983F /* POSApp */ = {
 			isa = PBXGroup;
 			children = (
+				018E3E5C1FF5E2A200E4618F /* Localization */,
 				E960274E1FD858F60099AA85 /* Libraries */,
 				E92676BD1FD84B4A0077983F /* Frameworks */,
 				E92676BC1FD84B380077983F /* Custom */,
@@ -335,9 +344,9 @@
 			isa = PBXGroup;
 			children = (
 				E96027951FD85EE00099AA85 /* DBManneger.swift */,
+				012CBF8F1FE3F95B00BD1C1C /* Localizator.swift */,
 				012CBF7A1FE3C71900BD1C1C /* Reachability.swift */,
 				E96027971FD85EF00099AA85 /* Constant.swift */,
-				012CBF851FE3F87A00BD1C1C /* LocalizationList.plist */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -347,7 +356,6 @@
 			children = (
 				E96027931FD85DCB0099AA85 /* CustomUIDesign.swift */,
 				E96027991FD85EFE0099AA85 /* UIColor.swift */,
-				012CBF8F1FE3F95B00BD1C1C /* Localizator.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";

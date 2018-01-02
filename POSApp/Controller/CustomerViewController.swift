@@ -10,9 +10,9 @@ import UIKit
 
 class CustomerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
-    @IBOutlet weak var buttonSubmit: DesignButton!
-    var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
+    //MARK:- Variable declaration
     
+    @IBOutlet weak var buttonSubmit: DesignButton!
     @IBOutlet weak var labelRoll: UILabel!
     @IBOutlet weak var labelContact: UILabel!
     @IBOutlet weak var labelLastName: UILabel!
@@ -27,6 +27,9 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var viewContactNo: DesignableView!
     @IBOutlet weak var viewFirstName: DesignableView!
     @IBOutlet weak var viewRoll: DesignableView!
+    var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
+    
+    //MARK:- View life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,13 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         // Do any additional setup after loading the view.
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Helper Methods
     
     func setCustomColor(){
     
@@ -64,8 +74,30 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+        
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        scrollView.contentInset = contentInset
+        
+    }
+    
+    // MARK:- Button actions
+    
     @IBAction func buttonActionSubmit(_ sender: Any) {
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -109,24 +141,7 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         return true
         
     }
-    func keyboardWillShow(notification:NSNotification){
-        
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-        
-    }
-    
-    func keyboardWillHide(notification:NSNotification){
-        
-        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        scrollView.contentInset = contentInset
-        
-    }
+   
     
     func setTextFieldDelegate(){
         
@@ -136,10 +151,7 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+ 
     
 
     /*
