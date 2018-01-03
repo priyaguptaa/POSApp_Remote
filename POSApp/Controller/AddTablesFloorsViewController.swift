@@ -24,6 +24,7 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        setLocalization()
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +37,14 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     collectionViewAddFloor.register(UINib(nibName: "AddFloorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddFloorCollectionViewCell")
         collectionViewAddTable.register(UINib(nibName: "AddTableCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddTableCollectionViewCell")
         
+    }
+    
+    func setLocalization(){
+        
+        self.buttonAddFloor.setTitle(Localizator.instance.localize(string: "key_addFloor"), for: .normal)
+        self.buttonRemoveFloor.setTitle(Localizator.instance.localize(string: "key_removeFloor"), for: .normal)
+        self.buttonAddTable.setTitle(Localizator.instance.localize(string: "key_addTable"), for: .normal)
+        self.buttonRemoveTable.setTitle(Localizator.instance.localize(string: "key_removeTable"), for: .normal)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

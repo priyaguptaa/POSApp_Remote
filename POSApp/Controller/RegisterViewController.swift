@@ -56,14 +56,14 @@ class RegisterViewController: UIViewController {
             
         }
     }
- 
+    // MARK:- Display signup screen show logout time
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == "SignUpIdentifier"{
-            
+
          let vc = segue.destination as! SignUpViewController
             vc.sceneType = SceneType.InitialScene
-            
+
         }
     }
 }

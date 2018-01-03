@@ -2,6 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_removeTable</key>
+	<dict>
+		<key>value</key>
+		<string>إزالة الجدول
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_addTable</key>
+	<dict>
+		<key>value</key>
+		<string>إضافة جدول
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_removeFloor</key>
+	<dict>
+		<key>value</key>
+		<string>إزالة الكلمة
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_addFloor</key>
+	<dict>
+		<key>value</key>
+		<string>إضافة أرضية
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_enterHourly</key>
 	<dict>
 		<key>value</key>
@@ -198,7 +230,7 @@
 	<key>key_forgotPassword</key>
 	<dict>
 		<key>value</key>
-		<string>هل نسيت كلمة المرور</string>
+		<string>?هل نسيت كلمة المرور</string>
 		<key>comment</key>
 		<string></string>
 	</dict>

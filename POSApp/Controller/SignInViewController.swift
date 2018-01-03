@@ -130,30 +130,28 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
 //        loginButton.center = newFrame
         loginButton.delegate = self as FBSDKLoginButtonDelegate
         view.addSubview(loginButton)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
         
-        // auto layout constraints
-       
-//                loginButton.translatesAutoresizingMaskIntoConstraints = false
-//
-//                let verticalConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 20)
-//
-//        let heightConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 44)
-//
-//        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
-//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-//
-//
-//        let topRightViewTrailingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
-//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-//
-//        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
+        let verticalConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 10)
+        
+        let heightConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 44)
+        
+        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        
+        let topRightViewTrailingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
+   
     }
     
     func twiterLogin(){
         
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
-                print("signed in as \(session?.userName)")
+                print("signed in as \(String(describing: session?.userName))")
                 
                 print("signed in as \(session!.userName)");
                 let client = TWTRAPIClient.withCurrentUser()
@@ -204,20 +202,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
 //        logInButton.center = newFrame
         
         // auto layout constraints
-//        logInButton.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        let verticalConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 20)
-//        
-//        let heightConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 44)
-//        
-//        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
-//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-//        
-//        
-//        let topRightViewTrailingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
-//            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-//        
-//        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
+        logInButton.translatesAutoresizingMaskIntoConstraints = false
+
+        let verticalConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 60)
+
+        let heightConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 44)
+
+        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+
+
+        let topRightViewTrailingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+
+        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
         
     }
     
@@ -247,7 +245,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
         googleSignInButton.center = newFrame
         
         // auto layout constraints
-     
+        googleSignInButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let verticalConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 110)
+        
+        let heightConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 50)
+        
+        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        
+        let topRightViewTrailingConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
         
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -258,10 +269,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInDele
             return
         }
         
-        //if success display the email on label
-        var email = user.profile.email
-        var firstName = user.profile.givenName
-        var lastName = user.profile.familyName
+       // success
+        let email = user.profile.email
+        let firstName = user.profile.givenName
+        let lastName = user.profile.familyName
         let dataDictionary:[String:String] = ["userEmail":email as! String,"firstName":firstName as! String,"lastName": lastName as! String]
         UserDefaults.standard.set(dataDictionary, forKey: "dataDictionary")
         let result = UserDefaults.standard.value(forKey: "dataDictionary")
