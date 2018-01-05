@@ -7,18 +7,18 @@
 //
 
 import UIKit
-// set delegate here
+
+//MARK:-  set delegate here
 protocol PopUpViewControllerDelegate: class {
     
     func changeBackgroundColor(_ color: UIColor?)
     
 }
 
-class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
+class OrdersViewController: UIViewController,PopUpViewControllerDelegate {
     
-    func changeBackgroundColor(_ color: UIColor?) {
-        buttonReservation.backgroundColor = UIColor.black
-    }
+    // MARK:- Variable declaration
+    
     var floorOneImageArray : [String] = [""]
     var floorOneNameArray : [String] = [""]
     var hallImageArray : [String] = [""]
@@ -36,20 +36,31 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
     @IBOutlet weak var segmentControlOrder: UISegmentedControl!
     @IBOutlet weak var buttonReservation: DesignButton!
     
+    //MARK:- view life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         
         // set segment font size
         let attribute = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 25.0)!, forKey: NSFontAttributeName as NSCopying)
         segmentControlOrder.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
-     self.buttonReservation.setTitle(Localizator.instance.localize(string: "key_buttonReservation"), for: .normal)
+        self.buttonReservation.setTitle(Localizator.instance.localize(string: "key_buttonReservation"), for: .normal)
         setCustomColor()
         setupView()
-         self.tempArray = self.hallNameArray
+        self.tempArray = self.hallNameArray
         // Do any additional setup after loading the view.
     }
- 
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- Helper function
+    
+    func changeBackgroundColor(_ color: UIColor?) {
+        buttonReservation.backgroundColor = UIColor.black
+    }
     
     func setCustomColor(){
         
@@ -73,45 +84,10 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         balconeyImageArray = ["place1","place2", "place3" , "place4","place5","place6"]
         floorTwoNameArray = ["place1","place2", "place3" , "place4","place5"]
         floorTwoImageArray = ["place1","place2", "place3" , "place4","place5"]
-        
     }
+ 
+    //MARK:- Button actions
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tempArray.count
-       
-    }
-         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCollectionViewCell", for: indexPath) as! OrderCollectionViewCell
-           collectionCell.imageViewFloor.image = UIImage.init(named: tempArray[indexPath.row])
-            return collectionCell
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCell = collectionViewOrder.cellForItem(at: indexPath) as! OrderCollectionViewCell
-        if selectedCell.isSelected == true {
-            selectedCell.imageViewFloor.layer.borderColor = UIColor.red.cgColor
-            selectedCell.imageViewFloor.layer.borderWidth = 2.0
-           
-            let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
-            popOverVc.delegate = self
-            self.addChildViewController(popOverVc)
-            popOverVc.view.frame = self.view.frame
-            self.view.addSubview(popOverVc.view)
-            popOverVc.didMove(toParentViewController: self)
-            self.buttonReservation.backgroundColor = UIColor.brown
-        }
-    
-    }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-        let selectedCell = collectionView.cellForItem(at: indexPath) as! OrderCollectionViewCell
-        selectedCell.imageViewFloor.layer.borderColor = UIColor.clear.cgColor
-        selectedCell.imageViewFloor.layer.borderWidth = 2.0
-        
-    }
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
      
         switch (sender.selectedSegmentIndex) {
@@ -133,11 +109,7 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         }
        self.collectionViewOrder.reloadData()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
 
     @IBAction func buttonReservationAction(_ sender: Any) {
         if buttonReservation.isSelected{
@@ -157,4 +129,47 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
     }
     */
 
+}
+//MARK:- Collection view data source
+
+extension OrdersViewController: UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tempArray.count
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCollectionViewCell", for: indexPath) as! OrderCollectionViewCell
+        collectionCell.imageViewFloor.image = UIImage.init(named: tempArray[indexPath.row])
+        return collectionCell
+    }
+}
+// MARK:- Collection view delegate
+
+extension OrdersViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionViewOrder.cellForItem(at: indexPath) as! OrderCollectionViewCell
+        if selectedCell.isSelected == true {
+            selectedCell.imageViewFloor.layer.borderColor = UIColor.red.cgColor
+            selectedCell.imageViewFloor.layer.borderWidth = 2.0
+            
+            let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
+            popOverVc.delegate = self
+            self.addChildViewController(popOverVc)
+            popOverVc.view.frame = self.view.frame
+            self.view.addSubview(popOverVc.view)
+            popOverVc.didMove(toParentViewController: self)
+            self.buttonReservation.backgroundColor = UIColor.brown
+        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! OrderCollectionViewCell
+        selectedCell.imageViewFloor.layer.borderColor = UIColor.clear.cgColor
+        selectedCell.imageViewFloor.layer.borderWidth = 2.0
+        
+    }
+    
 }

@@ -10,11 +10,12 @@ import UIKit
 import SideMenu
 
 class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-
+    
+    // MARK:- Variable declaration
     @IBOutlet weak var tableViewSideMenu: UITableView!
+    
     var userDefaultsDictionary  : [String:String] = [:]
     var menuDictArray : [[String : String]] = [[:]]
-   
     var appDelegate = AppDelegate()
     var home = Localizator.instance.localize(string: "key_tittleHome")
     var customer = Localizator.instance.localize(string: "key_buttonCustomer")
@@ -24,6 +25,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     var management = Localizator.instance.localize(string: "key_buttonManagement")
     var logOut = Localizator.instance.localize(string: "key_logOut")
   
+    //MARK:- View life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,13 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         self.userDefaultsDictionary = userDefaults.value(forKey: "dataDictionary") as! [String:String]
         // Do any additional setup after loading the view.
     }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- Helper function
+    
     func setupView() {
         
         self.tableViewSideMenu.delegate = self
@@ -47,11 +56,6 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     func loadData(){
         
            menuDictArray = [["name" : "","imageName" : "", "category" : "-1"], ["name" : home, "imageName" : "homeBlack_icon","category" : "-1"], ["name" : orders, "imageName" : "orderBlack_icon", "category" : "1"], ["name" : endOfDay, "imageName" : "eodBlack_icon", "category" : "3"],["name" : management, "imageName" : "managementBlack_icon", "category" : "2"], ["name" : configuration, "imageName" : "configurationBlack_icon", "category" : "-1"], ["name" : customer, "imageName" : "customerImg1", "category" : "-1"], ["name" : logOut, "imageName" : "logoutBlack_icon", "category" : "-1"]]
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -208,8 +212,5 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         }
      
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
 }

@@ -2,6 +2,76 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_removeAllTable</key>
+	<dict>
+		<key>value</key>
+		<string>All Table has Been Ramoved</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dontHaveTable</key>
+	<dict>
+		<key>value</key>
+		<string>There is No Table</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_deleteFloor</key>
+	<dict>
+		<key>value</key>
+		<string>You Can Delete Only Floor</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_floor</key>
+	<dict>
+		<key>value</key>
+		<string>Floor</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_balconey</key>
+	<dict>
+		<key>value</key>
+		<string>Balconey</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_hall</key>
+	<dict>
+		<key>value</key>
+		<string>Hall</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_correctEmail</key>
+	<dict>
+		<key>value</key>
+		<string>please Enter Correct Email Address</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_wrongEmail</key>
+	<dict>
+		<key>value</key>
+		<string>Wrong Email</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyText</key>
+	<dict>
+		<key>value</key>
+		<string>Empty Text</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_yourPassword</key>
+	<dict>
+		<key>value</key>
+		<string>Your Password is</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_removeTable</key>
 	<dict>
 		<key>value</key>
@@ -159,7 +229,7 @@
 	<key>key_errorMsg</key>
 	<dict>
 		<key>value</key>
-		<string>Error Msg</string>
+		<string>Error Msg :(</string>
 		<key>comment</key>
 		<string></string>
 	</dict>

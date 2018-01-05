@@ -11,18 +11,23 @@ import SideMenu
 
 class HomeViewController: UIViewController {
     
+    //MARK:- Variable declration
+    
     @IBOutlet weak var buttonCustomer: DesignButton!
     @IBOutlet weak var buttonConfigration: DesignButton!
     @IBOutlet weak var buttonManagement: DesignButton!
     @IBOutlet weak var buttonEndOfDay: DesignButton!
     @IBOutlet weak var buttonOrders: DesignButton!
+    
     var home = Localizator.instance.localize(string: "key_tittleHome")
     var customer = Localizator.instance.localize(string: "key_buttonCustomer")
     var configuration = Localizator.instance.localize(string: "key_buttonConfiguration")
     var endOfDay = Localizator.instance.localize(string: "key_buttonEndOfDay")
     var orders = Localizator.instance.localize(string: "key_buttonOrders")
     var management = Localizator.instance.localize(string: "key_buttonManagement")
-     
+    
+    // MARK:- View life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -33,6 +38,12 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Helper function
     func setCustomColor(){
         
         buttonOrders.backgroundColor = UIColor.customLightBlue
@@ -52,22 +63,36 @@ class HomeViewController: UIViewController {
         
     }
     
-    func designNavigation(){
+    func designNavigation() {
         
         let menuButton = UIBarButtonItem(image: UIImage(named: "menuIcon"), style: .plain, target: self, action: #selector(addTapped))
         navigationItem.leftBarButtonItem  = menuButton
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         self.title =  Localizator.instance.localize(string: "key_tittleHome")
-//        applyAttributedNavigationBarTitleWith(currentTitle: Localizator.instance.localize(string: "key_tittleHome"), currentNavigationController: self.navigationController!)
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 34)!, NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = UIColor.brown
         self.navigationController?.view.tintColor = UIColor.white
         let backItem = UIBarButtonItem()
         backItem.title = Localizator.instance.localize(string: "key_tittleBack")
         navigationItem.backBarButtonItem = backItem
-      
+
+    }
+    
+    func addTapped (sender:UIButton) {
+        
+        if POSManger.shared.localizeString == "ar-US" {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+            vc.leftSide = false
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+            vc.leftSide = true
+            self.present(vc, animated: true, completion: nil)
+            
+        }
         
     }
+    // MARK:- Button actions
     
     @IBAction func buttonConfigurationAction(_ sender: Any) {
         
@@ -114,27 +139,6 @@ class HomeViewController: UIViewController {
         
     }
     
-    func addTapped (sender:UIButton) {
-        
-        if POSManger.shared.localizeString == "ar-US" {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
-            vc.leftSide = false
-            self.present(vc, animated: true, completion: nil)
-        } else {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
-            vc.leftSide = true
-            self.present(vc, animated: true, completion: nil)
-            
-        }
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     /*
     // MARK: - Navigation
 

@@ -9,17 +9,28 @@
 import UIKit
 
 class ManagementViewController: UIViewController {
-
+    
+    // MARK:- Variable declaration
     @IBOutlet weak var buttonShift: DesignButton!
     @IBOutlet weak var buttonCashInOut: DesignButton!
     @IBOutlet weak var buttonEmployee: DesignButton!
     @IBOutlet weak var buttonTimeStamp: DesignButton!
+    
+    //MARK:- View life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomLanguageValue()
         // Do any additional setup after loading the view.
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- Helper methods
+    
     func setCustomLanguageValue(){
         
         
@@ -29,6 +40,8 @@ class ManagementViewController: UIViewController {
         buttonCashInOut.setTitle(Localizator.instance.localize(string: "key_buttonCashInOut"), for: .normal)
     }
 
+    // MARK:- Button actions
+    
     @IBAction func actionButtonShift(_ sender: Any) {
     }
     @IBAction func actionButtonTimeStamp(_ sender: Any) {
@@ -44,11 +57,7 @@ class ManagementViewController: UIViewController {
     
     @IBAction func actionButonCashInOut(_ sender: Any) {
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
 
     /*
     // MARK: - Navigation

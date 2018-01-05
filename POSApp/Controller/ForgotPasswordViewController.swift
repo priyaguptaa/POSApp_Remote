@@ -10,26 +10,34 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
     
+    //MARK:- Variable delaration
+    
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var buttonSubmit: DesignButton!
     @IBOutlet weak var viewEmail: DesignableView!
     var password = ""
+    
+    //MARK:- View life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designNavigation()
         // Do any additional setup after loading the view.
     }
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- Helper function
+    
     func designNavigation(){
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.barTintColor = UIColor.customLightBlue
         self.navigationController?.view.tintColor = UIColor.white
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
     func isValidEmail(testStr:String) -> Bool {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -37,7 +45,9 @@ class ForgotPasswordViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
         
     }
-
+    
+    //MARK:- Button action
+    
     @IBAction func actionButtonSubmit(_ sender: Any) {
         let emailResult = isValidEmail(testStr: textFieldEmail.text!)
         let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
@@ -45,34 +55,27 @@ class ForgotPasswordViewController: UIViewController {
         
         if (fetchedUser.count>0) {
             
-             if(self.textFieldEmail.text == fetchedUser[0].email){
+            if(self.textFieldEmail.text == fetchedUser[0].email){
                 
                 password = fetchedUser[0].password
-                showDefaultAlertViewWith(alertTitle: "Your Password is", alertMessage: password, okTitle: "ok", currentViewController: self)
+                showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_yourPassword"), alertMessage: password, okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
                 
             }
         }
-       
-         else if(textFieldEmail.text == ""){
             
-            showDefaultAlertViewWith(alertTitle: "Empty Text", alertMessage: "Enter Email address", okTitle: "ok", currentViewController: self)
+        else if(textFieldEmail.text == ""){
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_emptyText"), alertMessage: Localizator.instance.localize(string: "key_email"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
+        }
+            
+        else if(emailResult == false){
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_wrongEmail"), alertMessage: Localizator.instance.localize(string: "key_correctEmail"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
+            
+        }
+        else{
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_wrongEmail"), alertMessage: Localizator.instance.localize(string: "key_correctEmail"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         }
         
-  else if(emailResult == false){
-            showDefaultAlertViewWith(alertTitle: "Wrong Email", alertMessage: "Enter Correct Email", okTitle: "ok", currentViewController: self)
-    }
-
-//             else if(self.textFieldEmail.text == fetchedUser[0].email){
-////            showDefaultAlertViewWith(alertTitle: "Empty Email", alertMessage: "please Enter Email Address", okTitle: "ok", currentViewController: self)
-//
-//            password = fetchedUser[0].password
-//            showDefaultAlertViewWith(alertTitle: "Your Password is", alertMessage: password, okTitle: "ok", currentViewController: self)
-//
-//        }
-        else{
-                    showDefaultAlertViewWith(alertTitle: "Wrong Email", alertMessage: "please Enter Correct Email Address", okTitle: "ok", currentViewController: self)
-        }
-      
     }
    
     /*

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class CustomerViewController: UIViewController, UITextFieldDelegate {
     
     //MARK:- Variable declaration
     
@@ -74,6 +74,23 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    func setTextFieldDelegate(){
+        
+        textFieldFirstName.delegate = self
+        textFieldLastName.delegate = self
+        textFieldCustmorContact.delegate = self
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textFieldFirstName.resignFirstResponder()
+        textFieldLastName.resignFirstResponder()
+        textFieldCustmorContact.resignFirstResponder()
+        return true
+        
+    }
+    
     func keyboardWillShow(notification:NSNotification){
         
         var userInfo = notification.userInfo!
@@ -97,12 +114,18 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func buttonActionSubmit(_ sender: Any) {
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
+
+    @IBAction func buttonRollAction(_ sender: Any) {
         
-        return 1
+        // hiding and unhiding
+        tableViewDropDown.isHidden = !tableViewDropDown.isHidden
         
     }
+    
+}
+// MARK:- Tabel view Datasource
+
+extension CustomerViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -117,6 +140,9 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
         
     }
+}
+// MARK:- Table view Delegate
+extension CustomerViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -125,43 +151,4 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableViewDropDown.isHidden = true
         
     }
-    
-    @IBAction func buttonRollAction(_ sender: Any) {
-        
-        // hiding and unhiding
-        tableViewDropDown.isHidden = !tableViewDropDown.isHidden
-        
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textFieldFirstName.resignFirstResponder()
-        textFieldLastName.resignFirstResponder()
-        textFieldCustmorContact.resignFirstResponder()
-        return true
-        
-    }
-   
-    
-    func setTextFieldDelegate(){
-        
-    textFieldFirstName.delegate = self
-    textFieldLastName.delegate = self
-    textFieldCustmorContact.delegate = self
-        
-    }
-    
- 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

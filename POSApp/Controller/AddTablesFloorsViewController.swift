@@ -8,26 +8,39 @@
 
 import UIKit
 
-class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class AddTablesFloorsViewController: UIViewController {
+    
+    // MARK:- Variable declaration
+    
     @IBOutlet weak var buttonRemoveTable: UIButton!
     @IBOutlet weak var buttonAddTable: UIButton!
     @IBOutlet weak var buttonRemoveFloor: UIButton!
     @IBOutlet weak var buttonAddFloor: UIButton!
     @IBOutlet weak var collectionViewAddTable: UICollectionView!
     @IBOutlet weak var collectionViewAddFloor: UICollectionView!
-    var arrayAddFloor : [String] = ["Hall", "Balconey"]
+    
+    var arrayAddFloor : [String] = [Localizator.instance.localize(string: "key_hall"), Localizator.instance.localize(string: "key_balconey")]
     var imageArray : [String] = []
     var arrayAddTable : [String] = ["tableWithWheel_img", "4chairTable_img", "candleTable", "CoupleTable_img", "partyTable_img", "tableTree_img", "tableWithWheel_img", "tableYellow_img"]
     var i = 1
     var indexTable = 0
+    
+    //MARK:- View life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         setLocalization()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Helper function
+    
     func setUpView(){
         
     collectionViewAddFloor.delegate = self
@@ -47,42 +60,12 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
         self.buttonRemoveTable.setTitle(Localizator.instance.localize(string: "key_removeTable"), for: .normal)
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        if (collectionViewAddFloor != nil) && collectionView == collectionViewAddTable {
-            
-        }
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (collectionView == collectionViewAddFloor) {
-        return arrayAddFloor.count
-        }
-        else {
-        return imageArray.count
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if (collectionView == collectionViewAddFloor){
-         let addFloorCollectionCell = collectionViewAddFloor.dequeueReusableCell(withReuseIdentifier: "AddFloorCollectionViewCell", for: indexPath) as! AddFloorCollectionViewCell
-        addFloorCollectionCell.labelAddFloor.text = arrayAddFloor[indexPath.row]
-        return addFloorCollectionCell
-        }
-        else
-        {
-            let addTableCollectionCell = collectionViewAddTable.dequeueReusableCell(withReuseIdentifier: "AddTableCollectionViewCell", for: indexPath) as! AddTableCollectionViewCell
-            let collectionImage = imageArray[indexPath.row]
-            addTableCollectionCell.imageViewAddTable.image = UIImage(named: collectionImage)
-
-            return addTableCollectionCell
-        }
-    }
+   
+    // MARK:- Button Actions
     
     @IBAction func buttonAddFloorAction(_ sender: Any) {
        
-        let floorString = "Floor" +  "\(i)"
+        let floorString = Localizator.instance.localize(string: "key_floor") +  "\(i)"
         i += 1
         arrayAddFloor.append(floorString)
         print("printed floor name \(floorString)")
@@ -101,7 +84,8 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
         else {
             
             print("u r doing wrong")
-            showDefaultAlertViewWith(alertTitle: "Error Msg:(", alertMessage: "you delete only floor", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle:  Localizator.instance.localize(string: "key_errorMsg"), alertMessage:  Localizator.instance.localize(string: "key_deleteFloor") , okTitle:  Localizator.instance.localize(string: "key_ok") , currentViewController: self)
+           // key_errorMsg
         }
         
          }
@@ -117,7 +101,7 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     }
         else {
             print("error")
-            showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "dont have table", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_errorMsg"), alertMessage:  Localizator.instance.localize(string: "key_dontHaveTable"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         }
     }
     @IBAction func actionButtonRemoveTable(_ sender: Any) {
@@ -130,16 +114,10 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
         else {
             
             print("u r doing wrong")
-            showDefaultAlertViewWith(alertTitle: "Error Msg:(", alertMessage: "all table are remove", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "key_errorMsg"), alertMessage: Localizator.instance.localize(string: "key_removeAllTable"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
         }
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -151,4 +129,43 @@ class AddTablesFloorsViewController: UIViewController, UICollectionViewDelegate,
     }
     */
 
+}
+//MARK:- Collection view datasource
+extension AddTablesFloorsViewController: UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        if (collectionViewAddFloor != nil) && collectionView == collectionViewAddTable {
+            
+        }
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (collectionView == collectionViewAddFloor) {
+            return arrayAddFloor.count
+        }
+        else {
+            return imageArray.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (collectionView == collectionViewAddFloor){
+            let addFloorCollectionCell = collectionViewAddFloor.dequeueReusableCell(withReuseIdentifier: "AddFloorCollectionViewCell", for: indexPath) as! AddFloorCollectionViewCell
+            addFloorCollectionCell.labelAddFloor.text = arrayAddFloor[indexPath.row]
+            return addFloorCollectionCell
+        }
+        else
+        {
+            let addTableCollectionCell = collectionViewAddTable.dequeueReusableCell(withReuseIdentifier: "AddTableCollectionViewCell", for: indexPath) as! AddTableCollectionViewCell
+            let collectionImage = imageArray[indexPath.row]
+            addTableCollectionCell.imageViewAddTable.image = UIImage(named: collectionImage)
+            
+            return addTableCollectionCell
+        }
+    }
+}
+// MARK Collection view delegate
+extension AddTablesFloorsViewController: UICollectionViewDelegate {
+    
 }

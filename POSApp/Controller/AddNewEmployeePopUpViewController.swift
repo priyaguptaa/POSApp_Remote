@@ -10,6 +10,8 @@ import UIKit
 
 class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
 
+    // MARK:- Variable declaration
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var buttonSave: UIButton!
@@ -26,23 +28,41 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
     var sceneType : SceneType? = nil
     weak var delegate: AddNewEmployeePopUpViewControllerDelegate?
     
+    // MARK:- View life cycle methods
+    
     override func viewDidLoad() {
   
         super.viewDidLoad()
         
         setTextFieldDelegate()
         textFieldPlaceHolder()
+        sceneChecking()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+      
+
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Helper function
+    
+    func sceneChecking(){
+        
         let userDefaults = UserDefaults.standard
         if  (userDefaults.value(forKey: "employeeInfoDict") as? [String:String]) != nil {
-      self.userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as! [String:String]
+            self.userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as! [String:String]
         }
         else{
             print("error")
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-        switch sceneType {
+            switch sceneType {
         case .addEmpolyeeScene?:
             self.buttonSave.setTitle( Localizator.instance.localize(string: "key_buttonSave"), for: .normal)
             self.buttonClose.setTitle( Localizator.instance.localize(string: "key_buttonClose"), for: .normal)
@@ -61,19 +81,17 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
             break
         default : break
         }
-
-
-        // Do any additional setup after loading the view.
     }
+    
     func textFieldPlaceHolder(){
         
         createAttributedPlacedholderToTextField(currentTextField: textFieldName, currentPlaceholderText: Localizator.instance.localize(string: "key_enterName"))
         createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: Localizator.instance.localize(string: "key_password"))
         createAttributedPlacedholderToTextField(currentTextField: textFieldRole, currentPlaceholderText: Localizator.instance.localize(string: "key_enterRole"))
-           createAttributedPlacedholderToTextField(currentTextField: textFieldContact, currentPlaceholderText: Localizator.instance.localize(string: "key_enterContact"))
-           createAttributedPlacedholderToTextField(currentTextField: textFieldAddress, currentPlaceholderText: Localizator.instance.localize(string: "key_enterAddress"))
-           createAttributedPlacedholderToTextField(currentTextField: textFieldRate, currentPlaceholderText: Localizator.instance.localize(string: "key_enterRate"))
-           createAttributedPlacedholderToTextField(currentTextField: textFieldHourly, currentPlaceholderText: Localizator.instance.localize(string: "key_enterHourly"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldContact, currentPlaceholderText: Localizator.instance.localize(string: "key_enterContact"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldAddress, currentPlaceholderText: Localizator.instance.localize(string: "key_enterAddress"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldRate, currentPlaceholderText: Localizator.instance.localize(string: "key_enterRate"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldHourly, currentPlaceholderText: Localizator.instance.localize(string: "key_enterHourly"))
         
     }
     
@@ -95,6 +113,7 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
         self.scrollView.scrollIndicatorInsets = contentInsets
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textFieldName.resignFirstResponder()
@@ -119,50 +138,6 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
         textFieldPassword.delegate = self
         textFieldHourly.delegate = self
         
-    }
-    @IBAction func actionSaveButton(_ sender: Any) {
-        
-        switch sceneType {
-            
-        case .addEmpolyeeScene?:
-//            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
-//            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
-//            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
-//            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
-//            print("reasult is \(result!)")
-            checkFieldsValidation()
-            delegate?.loadEmployeeDetail()
-            
-            break
-            
-        case .editEmployeeScene?:
-            
-            DBManager.shared.updateEmployeeInfo(name: self.textFieldName.text!, pwd: textFieldPassword.text!, contact: textFieldRole.text!, address: textFieldContact.text!, role: textFieldAddress.text!, rate: textFieldRate.text!, hourly: textFieldHourly.text!)
-            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
-            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
-            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
-            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
-            print(result!)
-            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "key_success"), alertMessage:Localizator.instance.localize(string: "key_successMsg"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
-            delegate?.loadEmployeeUpdateDetail()
-            break
-        default : break
-        }
-    }
-    @IBAction func actionCloseButton(_ sender: Any) {
-            //self.view.removeFromSuperview()
-        switch sceneType {
-        case .addEmpolyeeScene?:
-            self.view.removeFromSuperview()
-            
-            break
-        case .editEmployeeScene?:
-            self.view.removeFromSuperview()
-            
-            
-            break
-        default : break
-        }
     }
     
     func checkFieldsValidation(){
@@ -219,11 +194,58 @@ class AddNewEmployeePopUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK:- Buttons actions
     
+    @IBAction func actionSaveButton(_ sender: Any) {
+        
+        switch sceneType {
+            
+        case .addEmpolyeeScene?:
+            //            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
+            //            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
+            //            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
+            //            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
+            //            print("reasult is \(result!)")
+            checkFieldsValidation()
+            delegate?.loadEmployeeDetail()
+            
+            break
+            
+        case .editEmployeeScene?:
+            
+            DBManager.shared.updateEmployeeInfo(name: self.textFieldName.text!, pwd: textFieldPassword.text!, contact: textFieldRole.text!, address: textFieldContact.text!, role: textFieldAddress.text!, rate: textFieldRate.text!, hourly: textFieldHourly.text!)
+            
+            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
+            
+            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
+            
+            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
+            
+            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
+            print(result!)
+            
+            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "key_success"), alertMessage:Localizator.instance.localize(string: "key_successMsg"), okTitle: Localizator.instance.localize(string: "key_ok"), currentViewController: self)
+            delegate?.loadEmployeeUpdateDetail()
+            
+            break
+        default : break
+        }
+    }
+    @IBAction func actionCloseButton(_ sender: Any) {
+            //self.view.removeFromSuperview()
+        switch sceneType {
+        case .addEmpolyeeScene?:
+            self.view.removeFromSuperview()
+            
+            break
+        case .editEmployeeScene?:
+            self.view.removeFromSuperview()
+            
+            
+            break
+        default : break
+        }
+    }
 
     /*
     // MARK: - Navigation

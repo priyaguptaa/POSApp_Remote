@@ -2,6 +2,83 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_removeAllTable</key>
+	<dict>
+		<key>value</key>
+		<string>كل كرسي إزالة
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_dontHaveTable</key>
+	<dict>
+		<key>value</key>
+		<string>لا يوجد جدول
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_deleteFloor</key>
+	<dict>
+		<key>value</key>
+		<string>يمكنك حذف الكلمة فقط
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_floor</key>
+	<dict>
+		<key>value</key>
+		<string>أرضية</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_balconey</key>
+	<dict>
+		<key>value</key>
+		<string>شرفة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_hall</key>
+	<dict>
+		<key>value</key>
+		<string>صالة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_correctEmail</key>
+	<dict>
+		<key>value</key>
+		<string>رجاء، أدخل عنوان البريد الإلكتروني الصحيح
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_wrongEmail</key>
+	<dict>
+		<key>value</key>
+		<string>بريد إلكتروني خاطئ
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyText</key>
+	<dict>
+		<key>value</key>
+		<string>نص فارغ
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_yourPassword</key>
+	<dict>
+		<key>value</key>
+		<string>كلمة المرور الخاصة بك
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_removeTable</key>
 	<dict>
 		<key>value</key>

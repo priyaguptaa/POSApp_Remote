@@ -9,10 +9,14 @@
 import UIKit
 
 class EndOfDayViewController: UIViewController {
-
+    
+    // MARK:- Variable declaration
+    
     @IBOutlet weak var buttonReserveEod: DesignButton!
     @IBOutlet weak var buttonEodReport: DesignButton!
     @IBOutlet weak var buttonEod: DesignButton!
+    
+    //MARK:- View life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,13 @@ class EndOfDayViewController: UIViewController {
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Helper function
+    
     func setCustomColor(){
     
     buttonEod.backgroundColor = UIColor.customLightBlue
@@ -29,16 +40,14 @@ class EndOfDayViewController: UIViewController {
     buttonEodReport.backgroundColor = UIColor.customLightBlue
         
     }
+    
     func setCustomLanguageValue(){
         
         buttonEod.setTitle(Localizator.instance.localize(string: "key_buttonEod"), for: .normal)
         buttonEodReport.setTitle(Localizator.instance.localize(string: "key_buttonEodReport"), for: .normal)
          buttonReserveEod.setTitle(Localizator.instance.localize(string: "key_buttonReserveEod"), for: .normal)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
 
     /*

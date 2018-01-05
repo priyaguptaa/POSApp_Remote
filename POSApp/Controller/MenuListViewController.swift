@@ -8,8 +8,10 @@
 
 import UIKit
 
-class MenuListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+class MenuListViewController: UIViewController {
+    
+    // MARK:- Variable declaration
+    
     @IBOutlet weak var labelBottomCategory: UILabel!
     @IBOutlet weak var labelBelowMenu: UILabel!
     @IBOutlet weak var buttonMenuGst: DesignButton!
@@ -35,6 +37,8 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableViewCategory: UITableView!
     @IBOutlet weak var textFieldCategoryName: UITextField!
     
+    //MARK:- View life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomLanguageValue()
@@ -43,7 +47,9 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
         self.title = Localizator.instance.localize(string: "key_menu")
         // Do any additional setup after loading the view.
     }
-   
+    
+    // MARK:- Helper function
+    
     func setCustomLanguageValue(){
         
         labelAboveCategory.text = Localizator.instance.localize(string: "key_category")
@@ -67,12 +73,12 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     // nib register for menu and category cell
     func setUpView(){
         
-    tableViewCategory.delegate = self
-    tableViewMenuItems.delegate = self
-    tableViewCategory.dataSource = self
-    tableViewMenuItems.dataSource = self
-    tableViewMenuItems.register(UINib(nibName: "MenuListTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuListTableViewCell")
-    tableViewCategory.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
+        tableViewCategory.delegate = self as? UITableViewDelegate
+        tableViewMenuItems.delegate = self as? UITableViewDelegate
+        tableViewCategory.dataSource = self
+        tableViewMenuItems.dataSource = self
+        tableViewMenuItems.register(UINib(nibName: "MenuListTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuListTableViewCell")
+        tableViewCategory.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
     }
     
     
@@ -80,48 +86,6 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     
         self.viewCategory.backgroundColor = UIColor.customblack
         self.viewMenuItem.backgroundColor = UIColor.lightGray
-        
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        if (tableView == tableViewCategory) && tableView == tableViewMenuItems {
-            
-        }
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if tableView == tableViewCategory {
-            return 5
-        }
-        else if (tableView == tableViewMenuItems) {
-            return 6
-        }
-        return 0
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if(tableView == tableViewCategory)
-        {
-        let categoryCell = tableViewCategory.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
-              return categoryCell
-        }
-        else{
-        
-            let menuListCell = tableViewMenuItems.dequeueReusableCell(withIdentifier: "MenuListTableViewCell") as! MenuListTableViewCell
-            
-            
-            return menuListCell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 90
         
     }
     
@@ -147,4 +111,56 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     */
 
+}
+
+//MARK:- Table view datasource
+
+extension MenuListViewController: UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if (tableView == tableViewCategory) && tableView == tableViewMenuItems {
+            
+        }
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == tableViewCategory {
+            return 5
+        }
+        else if (tableView == tableViewMenuItems) {
+            return 6
+        }
+        return 0
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if(tableView == tableViewCategory)
+        {
+            let categoryCell = tableViewCategory.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
+            return categoryCell
+        }
+        else{
+            
+            let menuListCell = tableViewMenuItems.dequeueReusableCell(withIdentifier: "MenuListTableViewCell") as! MenuListTableViewCell
+            
+            
+            return menuListCell
+        }
+    }
+    
+   
+}
+extension MenuListViewController: UICollectionViewDelegate{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 90
+        
+    }
+    
 }

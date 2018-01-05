@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+//MARK:- Add protocol Here
 protocol AddNewEmployeePopUpViewControllerDelegate: class {
     
     func loadEmployeeDetail()
@@ -16,6 +18,7 @@ protocol AddNewEmployeePopUpViewControllerDelegate: class {
 
 class EmployeeViewController: UIViewController, AddNewEmployeePopUpViewControllerDelegate {
     
+    // MARK:- Variable declarations
     
     @IBOutlet weak var labelRate: UILabel!
     @IBOutlet weak var labelHourly: UILabel!
@@ -30,6 +33,7 @@ class EmployeeViewController: UIViewController, AddNewEmployeePopUpViewControlle
     @IBOutlet weak var tableViewEmployee: UITableView!
     var employeeListArray : [EmployeeInfo] = []
     
+    // MARK:- Helper function
     func loadEmployeeDetail() {
         
         self.employeeListArray = DBManager.shared.fetchEmployeeInfo()
@@ -57,6 +61,15 @@ class EmployeeViewController: UIViewController, AddNewEmployeePopUpViewControlle
         labelHourly.text = Localizator.instance.localize(string: "key_hourly")
         
     }
+    func setUpView(){
+        
+        tableViewEmployee.delegate = self
+        tableViewEmployee.dataSource = self
+        tableViewEmployee.register(UINib(nibName:"EmployeeTableViewCell", bundle: nil), forCellReuseIdentifier: "EmployeeTableViewCell")
+        
+    }
+    
+    // MARK:- View life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +79,18 @@ class EmployeeViewController: UIViewController, AddNewEmployeePopUpViewControlle
         self.tableViewEmployee.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view.
     }
-    
-    func setUpView(){
+    override func viewWillAppear(_ animated: Bool) {
         
-        tableViewEmployee.delegate = self
-        tableViewEmployee.dataSource = self
-        tableViewEmployee.register(UINib(nibName:"EmployeeTableViewCell", bundle: nil), forCellReuseIdentifier: "EmployeeTableViewCell")
-        
+        self.employeeListArray = DBManager.shared.fetchEmployeeInfo()
+        self.tableViewEmployee.reloadData()
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- Button Actions
     
     @IBAction func actionAddEmployeeButton(_ sender: Any) {
         
@@ -109,16 +126,7 @@ class EmployeeViewController: UIViewController, AddNewEmployeePopUpViewControlle
     
    
  
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.employeeListArray = DBManager.shared.fetchEmployeeInfo()
-        self.tableViewEmployee.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
 
     /*

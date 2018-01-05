@@ -2,6 +2,80 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_removeAllTable</key>
+	<dict>
+		<key>value</key>
+		<string></string>
+		<key>comment</key>
+		<string>सभी कुर्सी निकाल दी गई है</string>
+	</dict>
+	<key>key_dontHaveTable</key>
+	<dict>
+		<key>value</key>
+		<string>कोई मेज नहीं है
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_deleteFloor</key>
+	<dict>
+		<key>value</key>
+		<string>आप केवल मंजिल को हटा सकते हैं</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_floor</key>
+	<dict>
+		<key>value</key>
+		<string>मंज़िल</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_balconey</key>
+	<dict>
+		<key>value</key>
+		<string>बालकनी</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_hall</key>
+	<dict>
+		<key>value</key>
+		<string>हॉल</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_correctEmail</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया सही ईमेल पता दर्ज करें
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_wrongEmail</key>
+	<dict>
+		<key>value</key>
+		<string>गलत ई - मेल
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_emptyText</key>
+	<dict>
+		<key>value</key>
+		<string>खाली पाठ
+</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_yourPassword</key>
+	<dict>
+		<key>value</key>
+		<string>आपका पासवर्ड है</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_removeTable</key>
 	<dict>
 		<key>value</key>

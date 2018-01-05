@@ -9,8 +9,8 @@
 import UIKit
 
 class PopUpViewController: UIViewController {
-    @IBOutlet weak var buttonClose: DesignButton!
     
+    @IBOutlet weak var buttonClose: DesignButton!
     @IBOutlet weak var viewPopUp: UIView!
     @IBOutlet weak var buttonSave: DesignButton!
     @IBOutlet weak var textFieldContact: DesignableTextField!
@@ -19,6 +19,8 @@ class PopUpViewController: UIViewController {
     weak var delegate: PopUpViewControllerDelegate?
     var dateFetch = ""
     let datePickerView:UIDatePicker = UIDatePicker()
+    
+    // MARK:- view life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setLocalization()
@@ -27,7 +29,9 @@ class PopUpViewController: UIViewController {
         textFieldPlaceHolder()
         // Do any additional setup after loading the view.
     }
-
+    
+    //MARK:- Helper function
+    
     func setCustomColor(){
         
         buttonSave.backgroundColor = UIColor.customRed
@@ -53,7 +57,9 @@ class PopUpViewController: UIViewController {
         buttonClose.setTitle(Localizator.instance.localize(string: "key_buttonClose"), for: .normal)
     
     }
-
+    
+    // MARK:- Button actions
+    
     @IBAction func buttonCloseAction(_ sender: Any) {
         self.view.removeFromSuperview()
         delegate?.changeBackgroundColor(UIColor.black)
